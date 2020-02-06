@@ -2,6 +2,7 @@ import { graphql, Link } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ExternalLink from "../components/external-link"
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
@@ -10,13 +11,22 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" />
       <div className="pb-12 mb-12 border-b border-cool-grey-100">
-        <div className="max-w-xl">
-          <h1>Florian Gächter</h1>
-          <p>
-            I work in Frontend. Sometimes in Backend as well. But mostly
-            Frontend. This are some things I've learned so far…
-          </p>
-        </div>
+        <p className="mb-4">
+          Hi, I'm
+          {` `}
+          <h1 className="inline text-base">
+            <ExternalLink to="https://twitter.com/neither1nor0">
+              Florian Gächter
+            </ExternalLink>
+          </h1>
+          {` `}—{` `}I do Frontend. Sometimes Backend as well. But mostly
+          Frontend. I'm currently working at{" "}
+          <ExternalLink to="https://www.frontify.com/en/">
+            Frontify
+          </ExternalLink>{" "}
+          as an Senior Frontend Engineer in the Marketing Team.
+        </p>
+        <p>This are some things I've learned so far…</p>
       </div>
       <h2 className="mb-6">Posts</h2>
       {posts.map(({ node }) => {
@@ -28,7 +38,7 @@ const IndexPage = ({ data }) => {
           >
             <header className="mb-2">
               <h3>
-                <Link to={`blog${node.fields.slug}`}>{title}</Link>
+                <Link to={`/blog${node.fields.slug}`}>{title}</Link>
               </h3>
               <small className="text-cool-grey-400">
                 {node.frontmatter.date}
@@ -45,7 +55,7 @@ const IndexPage = ({ data }) => {
               </div>
               <Link
                 className="text-light-blue-vivid-700 font-bold transition-colors duration-300 ease-in-out hover:text-light-blue-vivid-900"
-                to={`blog${node.fields.slug}`}
+                to={`/blog${node.fields.slug}`}
               >
                 Check it out
               </Link>

@@ -1,7 +1,7 @@
 ---
-title: How to upload file with GraphQL (without Appollo…)
+title: How to upload file with GraphQL (without Apollo…)
 date: "2020-02-06T12:00:00.000Z"
-description: Learn how to upload files with GraphQL but without using libraries like Appollo.
+description: Learn how to upload files with GraphQL but without using libraries like Apollo.
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and

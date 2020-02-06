@@ -1,6 +1,7 @@
 @tailwind base;
 
 body {
+  @apply leading-relaxed;
   color: theme("colors.cool-grey-700");
 }
 

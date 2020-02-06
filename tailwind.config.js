@@ -74,12 +74,33 @@ module.exports = {
         "teal-800": "#0C6B58",
         "teal-900": "#014D40",
       },
-      container: {
-        center: true,
-        padding: "2rem",
-      },
     },
   },
   variants: {},
-  plugins: [],
+  corePlugins: {
+    container: false,
+  },
+  plugins: [
+    function({ addComponents }) {
+      addComponents({
+        ".container": {
+          maxWidth: "100%",
+          margin: "0 auto",
+          padding: "0 2rem",
+          "@screen sm": {
+            maxWidth: "600px",
+          },
+          "@screen md": {
+            maxWidth: "700px",
+          },
+          "@screen lg": {
+            maxWidth: "800px",
+          },
+          "@screen xl": {
+            maxWidth: "900px",
+          },
+        },
+      })
+    },
+  ],
 }
