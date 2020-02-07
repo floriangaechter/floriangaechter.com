@@ -1,10 +1,9 @@
 import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import Header from "./header"
-import Helmet from "react-helmet"
 import { ReactComponent as Gatsby } from "../images/gatsby.svg"
 import { ReactComponent as Netlify } from "../images/netlify.svg"
+import Header from "./header"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

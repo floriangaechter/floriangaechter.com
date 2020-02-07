@@ -3,6 +3,7 @@ module.exports = {
     title: `Flo Gächter`,
     description: `TODO`,
     author: `@neither1nor0`,
+    siteUrl: `https://www.floriangaechter.com`,
   },
   plugins: [
     `gatsby-plugin-postcss`,
@@ -30,7 +31,7 @@ module.exports = {
             resolve: `gatsby-remark-classes`,
             options: {
               classMap: {
-                paragraph: "mb-4",
+                paragraph: `mb-4`,
               },
             },
           },
@@ -38,6 +39,66 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.frontmatter.description,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                        description
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: `/rss.xml`,
+            title: `www.floriangaechter.com RSS Feed`,
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-157973279-1`,
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -57,15 +118,15 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/campside.png`, // This path is relative to the root of the site.
+        icon: `src/images/campside.png`,
       },
     },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        tailwind: true, // Enable tailwindcss support
-        whitelist: [`mb-4`], // Don't remove this selector
-        ignore: [`prismjs/`], // Ignore files/folders
+        tailwind: true,
+        whitelist: [`mb-4`],
+        ignore: [`prismjs/`],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

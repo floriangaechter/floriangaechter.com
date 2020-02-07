@@ -1,8 +1,9 @@
 import { graphql, Link } from "gatsby"
+import PropTypes from "prop-types"
 import React from "react"
+import ExternalLink from "../components/external-link"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ExternalLink from "../components/external-link"
 import { ReactComponent as InternalLinkIcon } from "../images/internal-link.svg"
 
 const IndexPage = ({ data }) => {
@@ -12,22 +13,23 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" />
       <div className="pb-12 mb-12 border-b border-cool-grey-100">
-        <p className="mb-4">
-          Hi, I'm
+        <div className="mb-4">
+          Hi, I’m
           {` `}
           <h1 className="inline text-base">
             <ExternalLink to="https://twitter.com/neither1nor0">
-              Florian Gächter
+              Florian
             </ExternalLink>
           </h1>
           {` `}—{` `}I do Frontend. Sometimes Backend as well. But mostly
-          Frontend. I'm currently working at{" "}
+          Frontend. I’m currently working at{` `}
           <ExternalLink to="https://www.frontify.com/en/">
             Frontify
-          </ExternalLink>{" "}
+          </ExternalLink>
+          {` `}
           as an Senior Frontend Engineer in the Marketing Team.
-        </p>
-        <p>This are some things I've learned so far…</p>
+        </div>
+        <p>This are some things I’ve learned so far…</p>
       </div>
       <h2 className="mb-6">Posts</h2>
       {posts.map(({ node }) => {
@@ -46,7 +48,10 @@ const IndexPage = ({ data }) => {
               </small>
               <div className="-ml-1">
                 {node.frontmatter.tags.map(tag => (
-                  <span className="inline-block bg-light-blue-vivid-100 text-light-blue-vivid-800 text-xs px-1 mx-1 rounded text-white font-bold">
+                  <span
+                    key={tag}
+                    className="inline-block bg-light-blue-vivid-100 text-light-blue-vivid-800 text-xs px-1 mx-1 rounded text-white font-bold"
+                  >
                     {tag}
                   </span>
                 ))}
@@ -74,6 +79,10 @@ const IndexPage = ({ data }) => {
       })}
     </Layout>
   )
+}
+
+IndexPage.propTypes = {
+  data: PropTypes.object.isRequired,
 }
 
 export default IndexPage

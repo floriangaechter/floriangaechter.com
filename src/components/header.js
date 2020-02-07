@@ -16,11 +16,21 @@ const NavigationLink = ({ to, children, home = false }) => (
   </Link>
 )
 
+NavigationLink.propTypes = {
+  to: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  home: PropTypes.bool,
+}
+
 const NavigationIcon = ({ children }) => (
   <div className="bg-light-blue-vivid-100 mr-2 rounded p-1">{children}</div>
 )
 
-const Header = ({ siteTitle }) => (
+NavigationIcon.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+const Header = () => (
   <header className="pb-12 pt-8 mb-12 border-b border-cool-grey-100">
     <nav className="font-bold flex flex-wrap -ml-4">
       <NavigationLink to="/" home={true}>
@@ -44,13 +54,5 @@ const Header = ({ siteTitle }) => (
     </nav>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

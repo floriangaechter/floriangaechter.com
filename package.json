@@ -8,6 +8,8 @@
     "@svgr/webpack": "^5.1.0",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
+    "gatsby-plugin-feed": "^2.3.27",
+    "gatsby-plugin-google-analytics": "^2.1.35",
     "gatsby-plugin-manifest": "^2.2.39",
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-postcss": "^2.1.20",
@@ -33,6 +35,8 @@
   },
   "devDependencies": {
     "eslint-config-react-app": "^5.2.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^1.19.1"
   },
   "keywords": [

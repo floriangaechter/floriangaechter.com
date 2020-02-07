@@ -1,6 +1,6 @@
+import { graphql, Link } from "gatsby"
+import PropTypes from "prop-types"
 import React from "react"
-import { Link, graphql } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -42,6 +42,12 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       </nav>
     </Layout>
   )
+}
+
+BlogPostTemplate.propTypes = {
+  data: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 }
 
 export default BlogPostTemplate
