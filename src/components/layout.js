@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
     <div className="container flex flex-col min-h-screen">
       <Header siteTitle={data.site.siteMetadata.title} />
       <main className="flex-grow">{children}</main>
-      <footer className="flex items-center text-sm mb-12">
+      <footer className="flex items-center text-sm my-12">
         © {new Date().getFullYear()}, Built with
         <a aria-label="Gatsby" href="https://www.gatsbyjs.org/">
           <Gatsby className="h-4 ml-1" />

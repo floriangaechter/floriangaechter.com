@@ -21,17 +21,34 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              linkImagesToOriginal: false,
+              maxWidth: 836,
+              withWebp: true,
+              tracedSVG: {
+                color: `#40c3f7`,
+                turnPolicy: "TURNPOLICY_MAJORITY",
+              },
             },
           },
-          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              inlineCodeMarker: `•`,
+            },
+          },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           {
             resolve: `gatsby-remark-classes`,
             options: {
               classMap: {
-                paragraph: `mb-4`,
+                "heading[depth=2]": `mt-6 mb-2`,
+                "heading[depth=3]": `mt-6 mb-2`,
+                "heading[depth=4]": `mt-6 mb-2`,
+                paragraph: `mb-4 max-w-xl`,
+                pre: `mb-4`,
+                "list[ordered=false]": `list-disc mb-4 pl-4 max-w-xl`,
+                "list[ordered=true]": `list-decimal mb-4 pl-4 max-w-xl`,
               },
             },
           },

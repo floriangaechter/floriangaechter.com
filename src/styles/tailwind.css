@@ -17,6 +17,40 @@ h3 {
   @apply font-bold text-lg;
 }
 
+.gatsby-highlight {
+  @apply mb-4 mt-6;
+}
+
+.gatsby-highlight pre {
+  @apply rounded;
+}
+
+.gatsby-resp-image-wrapper {
+  @apply mb-6;
+}
+
+.gatsby-resp-image-wrapper img {
+  @apply rounded;
+}
+
+@screen md {
+  .gatsby-resp-image-wrapper {
+    width: 636px !important;
+  }
+}
+
+@screen lg {
+  .gatsby-resp-image-wrapper {
+    width: 736px !important;
+  }
+}
+
+@screen xl {
+  .gatsby-resp-image-wrapper {
+    width: 836px !important;
+  }
+}
+
 @tailwind components;
 
 @tailwind utilities;

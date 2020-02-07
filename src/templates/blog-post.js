@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Tag from "../components/tag"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -16,9 +17,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <article>
-        <header>
+        <header className="pb-12 mb-12 border-b border-cool-grey-100">
           <h1>{post.frontmatter.title}</h1>
           <small className="text-cool-grey-400">{post.frontmatter.date}</small>
+          <div className="-ml-1">
+            {post.frontmatter.tags.map(tag => (
+              <Tag key={tag}>{tag}</Tag>
+            ))}
+          </div>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
@@ -26,14 +32,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <ul>
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
+              <Link to={`/blog${previous.fields.slug}`} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
+              <Link to={`/blog${next.fields.slug}`} rel="next">
                 {next.frontmatter.title} →
               </Link>
             )}
@@ -67,6 +73,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
     }
   }

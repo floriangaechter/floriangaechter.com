@@ -17,7 +17,7 @@
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sharp": "^2.4.3",
     "gatsby-plugin-svgr": "^2.0.2",
-    "gatsby-remark-classes": "^0.1.2",
+    "gatsby-remark-classes": "github:chrisg86/gatsby-remark-classes#master",
     "gatsby-remark-copy-linked-files": "^2.1.37",
     "gatsby-remark-images": "^3.1.44",
     "gatsby-remark-prismjs": "^3.3.31",

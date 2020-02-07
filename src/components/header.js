@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { ReactComponent as About } from "../images/about.svg"
+import { ReactComponent as Home } from "../images/home.svg"
 import { ReactComponent as Blog } from "../images/blog.svg"
 import { ReactComponent as Contact } from "../images/contact.svg"
 
@@ -35,9 +35,9 @@ const Header = () => (
     <nav className="font-bold flex flex-wrap -ml-4">
       <NavigationLink to="/" home={true}>
         <NavigationIcon>
-          <About className="h-4" />
+          <Home className="h-4" />
         </NavigationIcon>
-        About
+        Home
       </NavigationLink>
       <NavigationLink to="/blog">
         <NavigationIcon>
