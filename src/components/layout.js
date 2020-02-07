@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Header from "./header"
+import Helmet from "react-helmet"
 import { ReactComponent as Gatsby } from "../images/gatsby.svg"
 import { ReactComponent as Netlify } from "../images/netlify.svg"
 
@@ -17,16 +18,16 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div className="container">
+    <div className="container flex flex-col min-h-screen">
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
-      <footer className="flex items-center text-sm">
+      <main className="flex-grow">{children}</main>
+      <footer className="flex items-center text-sm mb-12">
         © {new Date().getFullYear()}, Built with
-        <a href="https://www.gatsbyjs.org/">
+        <a aria-label="Gatsby" href="https://www.gatsbyjs.org/">
           <Gatsby className="h-4 ml-1" />
         </a>
         , running on
-        <a href="https://www.netlify.com/">
+        <a aria-label="Netlify" href="https://www.netlify.com/">
           <Netlify className="h-4 ml-1" />
         </a>
         .

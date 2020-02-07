@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ExternalLink from "../components/external-link"
+import { ReactComponent as InternalLinkIcon } from "../images/internal-link.svg"
 
 const IndexPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges
@@ -43,6 +44,13 @@ const IndexPage = ({ data }) => {
               <small className="text-cool-grey-400">
                 {node.frontmatter.date}
               </small>
+              <div className="-ml-1">
+                {node.frontmatter.tags.map(tag => (
+                  <span className="inline-block bg-light-blue-vivid-100 text-light-blue-vivid-800 text-xs px-1 mx-1 rounded text-white font-bold">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </header>
             <section>
               <div className="max-w-xl">
@@ -54,10 +62,11 @@ const IndexPage = ({ data }) => {
                 />
               </div>
               <Link
-                className="text-light-blue-vivid-700 font-bold transition-colors duration-300 ease-in-out hover:text-light-blue-vivid-900"
+                className="text-light-blue-vivid-700 font-bold transition-colors duration-300 ease-in-out hover:text-light-blue-vivid-900 flex items-center"
                 to={`/blog${node.fields.slug}`}
               >
                 Check it out
+                <InternalLinkIcon className="ml-1 h-3" />
               </Link>
             </section>
           </article>
@@ -82,6 +91,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            tags
           }
         }
       }

@@ -57,14 +57,14 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/campside.png`, // This path is relative to the root of the site.
       },
     },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         tailwind: true, // Enable tailwindcss support
-        // whitelist: [/^token/, /^pre/, /^code/], // Don't remove this selector
+        whitelist: [`mb-4`], // Don't remove this selector
         ignore: [`prismjs/`], // Ignore files/folders
       },
     },

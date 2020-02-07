@@ -2,6 +2,7 @@
 title: Create flexible layouts with Gatsby and Contentful
 date: "2020-02-07T12:00:00.000Z"
 description: This solution makes it possible to create flexible layouts with a CaaS type CMS like Contentful.
+tags: ["Gatsby", "Contentful"]
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and
