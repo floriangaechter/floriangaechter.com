@@ -6,7 +6,7 @@ description: Learn how to upload files with GraphQL but without using libraries 
 tags: ["GraphQL"]
 ---
 
-[![Loading Timber at Southampton Docks – C. R. W. Nevinson](loading-timber-at-southampton-docks.jpg "Loading Timber at Southampton Docks – C. R. W. Nevinson")](https://www.wikiart.org/en/c-r-w-nevinson/loading-timber-at-southampton-docks-1917)
+![Loading Timber at Southampton Docks – C. R. W. Nevinson](loading-timber-at-southampton-docks.jpg "Loading Timber at Southampton Docks – C. R. W. Nevinson")
 
 This quick tutorial explains how to upload files with GraphQL using only plain JavaScript and no frameworks or libraries. It's not meant as a complete tutorial as I won't be covering the backend side of the implementation.
 
