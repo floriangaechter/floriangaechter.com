@@ -1,11 +1,11 @@
 // Components
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Layout from "../components/layout"
 import BlogPostTeaser from "../components/blog-post-teaser"
 
-const Tags = ({ pageContext, data }) => {
+const Tags = ({ pageContext, data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
@@ -51,6 +51,7 @@ Tags.propTypes = {
       ),
     }),
   }),
+  location: PropTypes.object.isRequired,
 }
 
 export default Tags
