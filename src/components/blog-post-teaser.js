@@ -47,7 +47,7 @@ BlogPostTeaser.propTypes = {
   node: PropTypes.shape({
     frontmatter: PropTypes.shape({
       title: PropTypes.string.isRequired,
-      tags: PropTypes.array.isRequired,
+      tags: PropTypes.arrayOf(PropTypes.string.isRequired),
       date: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
     }),

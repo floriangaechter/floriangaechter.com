@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import React from "react"
 import { ReactComponent as Home } from "../images/home.svg"
 import { ReactComponent as Blog } from "../images/blog.svg"
-import { ReactComponent as Contact } from "../images/contact.svg"
 
 const NavigationLink = ({ to, children, home = false }) => (
   <Link
@@ -44,12 +43,6 @@ const Header = () => (
           <Blog className="h-4" />
         </NavigationIcon>
         Blog
-      </NavigationLink>
-      <NavigationLink to="/contact">
-        <NavigationIcon>
-          <Contact className="h-4" />
-        </NavigationIcon>
-        Contact
       </NavigationLink>
     </nav>
   </header>

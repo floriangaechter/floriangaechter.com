@@ -5,7 +5,7 @@ description: This solution makes it possible to create flexible layouts with a C
 tags: ["Gatsby", "Contentful"]
 ---
 
-![Layout](./layout.jpg)
+![Road to Asgaard Adirondack – by Rockwell Kent](./road-to-asgaard-adirondack.jpg)
 
 Far far away, behind the `css•.testclass {`, far from the countries Vokalia and
 Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
