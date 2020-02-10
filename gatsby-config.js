@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Flo Gächter`,
-    description: `TODO`,
+    description: `This are some things I've learned…`,
     author: `@neither1nor0`,
     siteUrl: `https://www.floriangaechter.com`,
   },
@@ -62,6 +62,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-feed`,
@@ -136,8 +137,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `TODO`,
-        short_name: `TODO`,
+        name: `Florian Gächters blog`,
+        short_name: `flo-blog`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -149,12 +150,18 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         tailwind: true,
-        whitelist: [`mb-4`],
+        whitelist: [
+          `mb-4`,
+          `mt-6`,
+          `mb-2`,
+          `max-w-xl`,
+          `list-disc`,
+          `pl-4`,
+          `list-decimal`,
+        ],
         ignore: [`prismjs/`],
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 }

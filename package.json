@@ -19,6 +19,7 @@
     "gatsby-plugin-purgecss": "^4.0.1",
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sharp": "^2.4.3",
+    "gatsby-plugin-sitemap": "^2.2.27",
     "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-remark-classes": "github:chrisg86/gatsby-remark-classes#master",
     "gatsby-remark-copy-linked-files": "^2.1.37",
