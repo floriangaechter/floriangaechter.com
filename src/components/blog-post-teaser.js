@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import React from "react"
 import PropTypes from "prop-types"
 import Tag from "./tag"
-import { ReactComponent as InternalLinkIcon } from "../images/internal-link.svg"
 
 const BlogPostTeaser = ({ node }) => {
   const title = node.frontmatter.title
@@ -36,7 +35,6 @@ const BlogPostTeaser = ({ node }) => {
           to={`/blog${node.fields.slug}`}
         >
           Check it out
-          <InternalLinkIcon className="ml-1 h-3" />
         </Link>
       </section>
     </article>

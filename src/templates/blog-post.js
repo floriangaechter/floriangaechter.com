@@ -26,7 +26,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             ))}
           </div>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section
+          className="blog-post"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </article>
       <nav>
         <ul>

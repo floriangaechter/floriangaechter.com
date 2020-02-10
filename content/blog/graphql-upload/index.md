@@ -1,109 +1,169 @@
 ---
-title: How to upload file with GraphQL (without Apollo…)
-date: "2020-02-06T12:00:00.000Z"
-description: Learn how to upload files with GraphQL but without using libraries like Apollo.
+title: GraphQL File uploading (without Apollo…)
+date: "2020-02-10"
+year: 2020
+description: Learn how to upload files with GraphQL but without using libraries or frameworks like Apollo.
 tags: ["GraphQL"]
 ---
 
-Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean. A small river named
-Duden flows by their place and supplies it with the necessary regelialia.
+[![Loading Timber at Southampton Docks – C. R. W. Nevinson](loading-timber-at-southampton-docks.jpg "Loading Timber at Southampton Docks – C. R. W. Nevinson")](https://www.wikiart.org/en/c-r-w-nevinson/loading-timber-at-southampton-docks-1917)
 
-## On deer horse aboard tritely yikes and much
+This quick tutorial explains how to upload files with GraphQL using only plain JavaScript and no frameworks or libraries. It's not meant as a complete tutorial as I won't be covering the backend side of the implementation.
 
-The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.
+### The specs
 
-- This however showed weasel
-- Well uncritical so misled
-  - this is very interesting
-- Goodness much until that fluid owl
+A general specification for file uploads through GraphQL can be found [on Github](https://github.com/jaydenseric/graphql-multipart-request-spec).
 
-When she reached the first hills of the **Italic Mountains**, she had a last
-view back on the skyline of her hometown _Bookmarksgrove_, the headline of
-[Alphabet Village](http://google.com) and the subline of her own road, the Line
-Lane. Pityful a rhetoric question ran over her cheek, then she continued her
-way. On her way she met a copy.
+The idea is to send a [multi-part form request](https://developer.mozilla.org/en-US/docs/Web/API/FormData) to the server which enables you to easily upload multiple files in one request.
 
-### Overlaid the jeepers uselessly much excluding
+As the specs point out, the following GraphQL query should be sent to the server:
 
-But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with
-[Longe and Parole](http://google.com) and dragged her into their agency, where
-they abused her for their projects again and again. And if she hasn’t been
-rewritten, then they are still using her.
+```GraphQL
+{
+  query: `
+    mutation($file: Upload!) {
+      singleUpload(file: $file) {
+        id
+      }
+    }
+  `,
+  variables: {
+    file: File
+  }
+}
+```
 
-> Far far away, behind the word mountains, far from the countries Vokalia and
-> Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-> right at the coast of the Semantics, a large language ocean.
+Which then will be uploaded as a multi-part form request:
 
-It is a paradisematic country, in which roasted parts of sentences fly into your
-mouth. Even the all-powerful Pointing has no control about the blind texts it is
-an almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar.
+```
+--------------------------cec8e8123c05ba25
+Content-Disposition: form-data; name="operations"
 
-### According a funnily until pre-set or arrogant well cheerful
+{ "query": "mutation ($file: Upload!) { singleUpload(file: $file) { id } }", "variables": { "file": null } }
+--------------------------cec8e8123c05ba25
+Content-Disposition: form-data; name="map"
 
-The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.
+{ "0": ["variables.file"] }
+--------------------------cec8e8123c05ba25
+Content-Disposition: form-data; name="0"; filename="a.txt"
+Content-Type: text/plain
 
-1.  So baboon this
-2.  Mounted militant weasel gregariously admonishingly straightly hey
-3.  Dear foresaw hungry and much some overhung
-4.  Rash opossum less because less some amid besides yikes jeepers frenetic
-    impassive fruitlessly shut
+Alpha file content.
 
-When she reached the first hills of the Italic Mountains, she had a last view
-back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet
-Village and the subline of her own road, the Line Lane. Pityful a rhetoric
-question ran over her cheek, then she continued her way. On her way she met a
-copy.
+--------------------------cec8e8123c05ba25--
+```
 
-> The copy warned the Little Blind Text, that where it came from it would have
-> been rewritten a thousand times and everything that was left from its origin
-> would be the word "and" and the Little Blind Text should turn around and
-> return to its own, safe country.
+## The details
 
-But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with Longe and Parole
-and dragged her into their agency, where they abused her for their projects
-again and again. And if she hasn’t been rewritten, then they are still using
-her. Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts.
+Let's have a look at the different parts of the form request.
 
-#### Silent delightfully including because before one up barring chameleon
+1. `operations` contains the GraphQL query:
 
-Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-large language ocean. A small river named Duden flows by their place and
-supplies it with the necessary regelialia. It is a paradisematic country, in
-which roasted parts of sentences fly into your mouth.
+```
+--------------------------cec8e8123c05ba25
+Content-Disposition: form-data; name="operations"
+{ "query": "mutation ($file: Upload!) { singleUpload(file: $file) { id } }", "variables": { "file": null } }
+```
 
-Even the all-powerful Pointing has no control about the blind texts it is an
-almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
-advised her not to do so, because there were thousands of bad Commas, wild
-Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.
+2. `map` is responsible for the mapping between the file-variable in the GraphQL query and the file attached to the request:
 
-##### Wherever far wow thus a squirrel raccoon jeez jaguar this from along
+```
+--------------------------cec8e8123c05ba25
+Content-Disposition: form-data; name="map"
 
-She packed her seven versalia, put her initial into the belt and made herself on
-the way. When she reached the first hills of the Italic Mountains, she had a
-last view back on the skyline of her hometown Bookmarksgrove, the headline of
-Alphabet Village and the subline of her own road, the Line Lane. Pityful a
-rhetoric question ran over her cheek, then she continued her way. On her way she
-met a copy.
+{ "0": ["variables.file"] }
+```
 
-###### Slapped cozy a that lightheartedly and far
+3. And the file fields contain the actual files themselves:
 
-The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word "and" and the Little Blind Text should turn around and return
-to its own, safe country. But nothing the copy said could convince her and so it
-didn’t take long until a few insidious Copy Writers ambushed her, made her drunk
-with Longe and Parole and dragged her into their agency, where they abused her
-for their projects again and again.
+```
+--------------------------cec8e8123c05ba25
+Content-Disposition: form-data; name="0"; filename="a.txt"
+Content-Type: text/plain
+
+Alpha file content.
+
+--------------------------cec8e8123c05ba25--
+```
+
+So far so good. But how do we implement a request like this in plain JavaScript?
+
+## The client
+
+Let's imagine we have the following HTML markup for a form:
+
+```html
+<form action="/graphql">
+  <input type="file" name="myfile" />
+  <button>Upload</button>
+</form>
+```
+
+All we need to do is create a `formData` request like so:
+
+```javascript
+const formData = new FormData()
+```
+
+Create the `operations` field, containing the GraphQL query, and append it to the form request:
+
+```javascript
+const operations = `{ "query": "mutation ($file: Upload!, $path: String) { upload(file: $file, path: $path) }", "variables": { "file": null, "path": "coins" } }`
+formData.append("operations", operations)
+```
+
+Add the `map` field with the variables and the actual file:
+
+```javascript
+const map = `{"0": ["variables.file"]}`
+formData.append("map", map)
+formData.append("0", event.target.files[0])
+```
+
+_For the sake of this example I referenced the file directly from the form, assuming the upload is triggered by an event._
+
+And lastly, send it to the server, using `fetch`:
+
+```javascript
+fetch("/graphql", {
+  body: formData,
+  method: "post",
+})
+```
+
+If all goes well and your server is implemented according to the previously mentioned specification, you should be able to upload files with just plain old JavaScript. No need for a fancy library or framework. Which doesn't mean that those frameworks are bad by the way... I just feel sometimes it's not needed.
+
+## Multiple files
+
+In case you want to upload multiple files, all we have to do is modify the GraphQL query to contain a list of files instead of just one file:
+
+```GraphQL
+{
+  query: `
+    mutation($file: Upload!) {
+      singleUpload(file: $file) {
+        id
+      }
+    }
+  `,
+  variables: {
+    files: [
+      File,
+      File
+    ]
+  }
+}
+```
+
+Add the mappings between the files and the variables to the `map` operation and append the files:
+
+```javascript
+const map = `{"0": ["variables.files.0"], "1": ["variables.files.1"]}`
+formData.append("map", map)
+formData.append("0", event.target.files[0])
+formData.append("1", event.target.files[1])
+```
+
+The rest is the same as the one-file example.
+
+If you have questions, concerns or just want to say Hi 👋, hit me up on [Twitter](https://twitter.com/neither1nor0).

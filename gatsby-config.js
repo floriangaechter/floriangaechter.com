@@ -26,7 +26,7 @@ module.exports = {
               withWebp: true,
               tracedSVG: {
                 color: `#40c3f7`,
-                turnPolicy: "TURNPOLICY_MAJORITY",
+                turnPolicy: `TURNPOLICY_MAJORITY`,
               },
             },
           },
@@ -50,6 +50,13 @@ module.exports = {
                 "list[ordered=false]": `list-disc mb-4 pl-4 max-w-xl`,
                 "list[ordered=true]": `list-decimal mb-4 pl-4 max-w-xl`,
               },
+            },
+          },
+          {
+            resolve: `gatsby-remark-external-links`,
+            options: {
+              target: null,
+              rel: `noreferrer noopener`,
             },
           },
         ],

@@ -17,6 +17,17 @@ h3 {
   @apply font-bold text-lg;
 }
 
+.blog-post a[href*="//"]:not([href*="mysite.com"]) {
+  @apply inline-flex items-center underline;
+}
+
+.blog-post a[href*="//"]:not([href*="mysite.com"]):after {
+  content: ""
+    url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PGc+PHBhdGggZmlsbD0iIzdCODc5NCIgZD0iTTQwMCAzMjBoMzJhMTYgMTYgMCAwMTE2IDE2djEyOGE0OCA0OCAwIDAxLTQ4IDQ4SDQ4YTQ4IDQ4IDAgMDEtNDgtNDhWMTEyYTQ4IDQ4IDAgMDE0OC00OGgxNjBhMTYgMTYgMCAwMTE2IDE2djMyYTE2IDE2IDAgMDEtMTYgMTZINjR2MzIwaDMyMFYzMzZhMTYgMTYgMCAwMTE2LTE2eiIgb3BhY2l0eT0iLjQiLz48cGF0aCBmaWxsPSIjN0I4Nzk0IiBkPSJNNDg0IDIyNGgtMTcuODhhMjggMjggMCAwMS0yOC0yOHYtLjc4TDQ0MCAxMjggMTkyLjkxIDM3Ni45MUEyNCAyNCAwIDAxMTU5IDM3N2wtLjA2LS4wNkwxMzUgMzUzLjA5YTI0IDI0IDAgMDEwLTMzLjk0bC4wNi0uMDZMMzg0IDcybC02Ny4yMSAxLjlBMjggMjggMCAwMTI4OCA0Ni42OFYyOGEyOCAyOCAwIDAxMjgtMjhoMTU4LjY3QTM3LjMzIDM3LjMzIDAgMDE1MTIgMzcuMzNWMTk2YTI4IDI4IDAgMDEtMjggMjh6Ii8+PC9nPjwvc3ZnPgo=);
+  @apply text-cool-grey-400 relative h-3 w-3 ml-1;
+  top: -7px;
+}
+
 .gatsby-highlight {
   @apply mb-4 mt-6;
 }

@@ -1,8 +1,6 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import { ReactComponent as Home } from "../images/home.svg"
-import { ReactComponent as Blog } from "../images/blog.svg"
 
 const NavigationLink = ({ to, children, home = false }) => (
   <Link
@@ -21,29 +19,13 @@ NavigationLink.propTypes = {
   home: PropTypes.bool,
 }
 
-const NavigationIcon = ({ children }) => (
-  <div className="bg-light-blue-vivid-100 mr-2 rounded p-1">{children}</div>
-)
-
-NavigationIcon.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
 const Header = () => (
   <header className="pb-12 pt-8 mb-12 border-b border-cool-grey-100">
     <nav className="font-bold flex flex-wrap -ml-4">
       <NavigationLink to="/" home={true}>
-        <NavigationIcon>
-          <Home className="h-4" />
-        </NavigationIcon>
         Home
       </NavigationLink>
-      <NavigationLink to="/blog">
-        <NavigationIcon>
-          <Blog className="h-4" />
-        </NavigationIcon>
-        Blog
-      </NavigationLink>
+      <NavigationLink to="/blog">Blog</NavigationLink>
     </nav>
   </header>
 )
