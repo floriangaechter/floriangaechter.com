@@ -1,5 +1,5 @@
 ---
-title: GraphQL File uploading (without Apollo…)
+title: GraphQL File Uploading (Without Apollo…)
 date: "2020-02-10"
 year: 2020
 description: Learn how to upload files with GraphQL but without using libraries or frameworks like Apollo.
@@ -122,7 +122,7 @@ formData.append("0", event.target.files[0])
 
 _For the sake of this example I referenced the file directly from the form, assuming the upload is triggered by an event._
 
-And lastly, send it to the server, using `fetch`:
+And lastly, send it to the server, using `javascript•fetch()`:
 
 ```javascript
 fetch("/graphql", {
@@ -166,4 +166,4 @@ formData.append("1", event.target.files[1])
 
 The rest is the same as the one-file example.
 
-If you have questions, concerns or just want to say Hi 👋, hit me up on [Twitter](https://twitter.com/neither1nor0).
+If you have questions, concerns or just want to say hi 👋, hit me up on [Twitter](https://twitter.com/neither1nor0).

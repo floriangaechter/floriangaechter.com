@@ -29,7 +29,7 @@ h3 {
 }
 
 .gatsby-highlight {
-  @apply mb-4 mt-6;
+  @apply mb-4;
 }
 
 .gatsby-highlight pre {

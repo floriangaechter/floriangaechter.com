@@ -21,8 +21,8 @@ const IndexPage = ({ data }) => {
               Florian
             </ExternalLink>
           </h1>
-          {` `}—{` `}I do Frontend. Sometimes Backend as well. But mostly
-          Frontend. I’m currently working at{` `}
+          {` `}—{` `}I do frontend. Sometimes backend as well. But mostly
+          frontend. I’m currently working at{` `}
           <ExternalLink to="https://www.frontify.com/en/">
             Frontify
           </ExternalLink>
