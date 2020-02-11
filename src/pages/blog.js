@@ -7,7 +7,12 @@ import SEO from "../components/seo"
 const BlogPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO
+        title="Blog"
+        description="This is an overview of all the different blog posts."
+        url="https://www.floriangaechter.com/blog/"
+        isBlogPost={false}
+      />
       <div className="pb-12 mb-12 border-b border-cool-grey-100">
         <h1>Blog</h1>
       </div>

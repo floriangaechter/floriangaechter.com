@@ -15,9 +15,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        url={location.href}
+        date={post.frontmatter.date}
+        modified={post.frontmatter.modified || post.frontmatter.date}
         ogImage={data.site.siteMetadata.siteUrl.concat(
           post.frontmatter.ogImage.childImageSharp.fixed.src
         )}
+        isBlogPost={true}
       />
       <article>
         <header className="pb-12 mb-12 border-b border-cool-grey-100">

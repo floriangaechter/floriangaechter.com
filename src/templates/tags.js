@@ -2,8 +2,9 @@
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import Layout from "../components/layout"
 import BlogPostTeaser from "../components/blog-post-teaser"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 const Tags = ({ pageContext, data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -15,6 +16,12 @@ const Tags = ({ pageContext, data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
+      <SEO
+        title={siteTitle}
+        description="This is an overview of all the different tags."
+        url={location.href}
+        isBlogPost={false}
+      />
       <div className="pb-12 mb-12 border-b border-cool-grey-100">
         <h1>{tagHeader}</h1>
       </div>

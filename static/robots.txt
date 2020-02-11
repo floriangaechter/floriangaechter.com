@@ -1,0 +1,4 @@
+user-agent: *
+disallow:
+
+sitemap: https://www.floriangaechter.com/sitemap.xml

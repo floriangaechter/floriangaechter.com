@@ -11,7 +11,12 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO
+        title="Home"
+        description="This are some things I've learned…"
+        url="https://www.floriangaechter.com/"
+        isBlogPost={false}
+      />
       <div className="pb-12 mb-12 border-b border-cool-grey-100">
         <div className="mb-4">
           Hi, I’m
