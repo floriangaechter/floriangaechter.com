@@ -34,7 +34,7 @@ const getSchemaOrgJSONLD = ({
               position: 1,
               item: {
                 "@id": `https://www.floriangaechter.com/blog/`,
-                name: `Blog | Flo Gächter`,
+                name: `Blog`,
               },
             },
             {
