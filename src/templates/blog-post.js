@@ -15,6 +15,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        ogImage={data.site.siteMetadata.siteUrl.concat(
+          post.frontmatter.ogImage.childImageSharp.fixed.src
+        )}
       />
       <article>
         <header className="pb-12 mb-12 border-b border-cool-grey-100">
@@ -66,6 +69,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -77,6 +81,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         tags
+        ogImage {
+          childImageSharp {
+            fixed(height: 1200, width: 1200) {
+              src
+            }
+          }
+        }
       }
     }
   }

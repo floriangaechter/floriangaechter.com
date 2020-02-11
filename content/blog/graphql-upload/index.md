@@ -4,6 +4,7 @@ date: "2020-02-10"
 year: 2020
 description: Learn how to upload files with GraphQL but without using libraries or frameworks like Apollo.
 tags: ["GraphQL"]
+ogImage: ./loading-timber-at-southampton-docks.jpg
 ---
 
 ![Loading Timber at Southampton Docks – C. R. W. Nevinson](loading-timber-at-southampton-docks.jpg "Loading Timber at Southampton Docks – C. R. W. Nevinson")

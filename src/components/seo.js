@@ -3,8 +3,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import Helmet from "react-helmet"
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+function SEO({ description, lang, meta, title, ogImage: ogImageProp }) {
+  const { site, ogImageDefault } = useStaticQuery(
     graphql`
       query {
         site {
@@ -12,6 +12,14 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
+          }
+        }
+        ogImageDefault: file(relativePath: { eq: "ogimage.jpg" }) {
+          childImageSharp {
+            fixed(height: 1200, width: 1200) {
+              src
+            }
           }
         }
       }
@@ -19,6 +27,10 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const ogImage =
+    ogImageProp ||
+    site.siteMetadata.siteUrl.concat(ogImageDefault.childImageSharp.fixed.src)
+  const ogTitle = title || site.siteMetadata.title
 
   return (
     <Helmet
@@ -45,8 +57,12 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          name: `og:image`,
+          content: ogImage,
+        },
+        {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:creator`,
@@ -54,12 +70,13 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: ogTitle,
         },
         {
           name: `twitter:description`,
           content: metaDescription,
         },
+        { name: `twitter:image`, content: ogImage },
       ].concat(meta)}
     />
   )
@@ -76,6 +93,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  ogImage: PropTypes.string.isRequired,
 }
 
 export default SEO
