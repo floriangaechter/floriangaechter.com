@@ -158,6 +158,7 @@ module.exports = {
           `list-disc`,
           `pl-4`,
           `list-decimal`,
+          `gatsby-highlight`,
         ],
         ignore: [`prismjs/`],
       },
