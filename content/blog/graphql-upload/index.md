@@ -3,7 +3,8 @@ title: GraphQL File Uploading (Without Apollo…)
 date: "2020-02-10"
 year: 2020
 description: Learn how to upload files with GraphQL but without using libraries or frameworks like Apollo.
-tags: ["GraphQL"]
+tags: ["GraphQL", "JavaScript"]
+keywords: ["graphql", "file upload", "fetch", "javascript"]
 ogImage: ./loading-timber-at-southampton-docks.jpg
 ---
 

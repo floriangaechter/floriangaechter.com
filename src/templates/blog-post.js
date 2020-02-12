@@ -22,6 +22,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           post.frontmatter.ogImage.childImageSharp.fixed.src
         )}
         isBlogPost={true}
+        keywords={post.frontmatter.keywords}
       />
       <article>
         <header className="pb-12 mb-12 border-b border-cool-grey-100">
@@ -85,6 +86,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         tags
+        keywords
         ogImage {
           childImageSharp {
             fixed(height: 1200, width: 1200) {

@@ -96,6 +96,7 @@ const SEO = ({
   modified,
   ogImage: ogImageProp,
   isBlogPost,
+  keywords,
 }) => {
   const { site, ogImageDefault, logoDefault } = useStaticQuery(
     graphql`
@@ -191,7 +192,16 @@ const SEO = ({
           content: metaDescription,
         },
         { name: `twitter:image`, content: ogImage },
-      ].concat(meta)}
+      ]
+        .concat(
+          keywords && keywords.length > 0
+            ? {
+                name: `keywords`,
+                content: keywords.join(`, `),
+              }
+            : []
+        )
+        .concat(meta)}
     >
       <script type="application/ld+json">
         {JSON.stringify(schemaOrgJSONLD)}
@@ -216,6 +226,7 @@ SEO.propTypes = {
   modified: PropTypes.string,
   ogImage: PropTypes.string,
   isBlogPost: PropTypes.bool.isRequired,
+  keywords: PropTypes.arrayOf(PropTypes.string),
 }
 
 export default SEO
