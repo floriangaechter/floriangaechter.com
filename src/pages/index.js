@@ -13,7 +13,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO
         title="Home"
-        description="This are some things I've learned…"
+        description="Personal blog of Florian Gächter. This are some things I've learned…"
         url="https://www.floriangaechter.com/"
         isBlogPost={false}
       />

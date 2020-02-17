@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Flo Gächter`,
-    description: `This are some things I've learned…`,
+    title: `Florian Gächter`,
+    description: `Personal blog of Florian Gächter. This are some things I've learned…`,
     author: `@neither1nor0`,
     siteUrl: `https://www.floriangaechter.com`,
   },
