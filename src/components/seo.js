@@ -116,7 +116,7 @@ const SEO = ({
             }
           }
         }
-        logoDefault: file(relativePath: { eq: "campside.png" }) {
+        logoDefault: file(relativePath: { eq: "floriangaechter.png" }) {
           childImageSharp {
             fixed(height: 512, width: 512) {
               src
