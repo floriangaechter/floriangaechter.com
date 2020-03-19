@@ -7,6 +7,8 @@ import { ReactComponent as Email } from "../images/email.svg"
 import { ReactComponent as RSS } from "../images/rss.svg"
 import { ReactComponent as Github } from "../images/github.svg"
 import { ReactComponent as Twitter } from "../images/twitter.svg"
+import { ReactComponent as Flo } from "../images/floriangaechter.svg"
+
 import Header from "./header"
 
 const Layout = ({ children }) => {
@@ -43,6 +45,15 @@ const Layout = ({ children }) => {
             rel="noreferrer noopener"
           >
             <Netlify className="h-4 ml-1" />
+          </a>
+          . Illustration from
+          <a
+            aria-label="Open Peeps"
+            title="Open Peeps"
+            href="https://www.openpeeps.com/"
+            rel="noreferrer noopener"
+          >
+            <Flo className="h-4 ml-1" />
           </a>
           .
         </div>

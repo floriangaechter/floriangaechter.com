@@ -137,13 +137,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Florian Gächters blog`,
+        name: `Florian Gächters Blog`,
         short_name: `flo-blog`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/campside.png`,
+        icon: `src/images/floriangaechter.png`,
       },
     },
     {
