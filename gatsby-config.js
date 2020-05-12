@@ -23,7 +23,7 @@ module.exports = {
             options: {
               linkImagesToOriginal: false,
               maxWidth: 836,
-              withWebp: true,
+              withWebp: { quality: 80 },
               tracedSVG: {
                 color: `#40c3f7`,
                 turnPolicy: `TURNPOLICY_MAJORITY`,

@@ -12,7 +12,7 @@ ogImage: ./loading-timber-at-southampton-docks.jpg
 
 This quick tutorial explains how to upload files with GraphQL using only plain JavaScript and no frameworks or libraries. It's not meant as a complete tutorial as I won't be covering the backend side of the implementation.
 
-### The specs
+## The specs
 
 A general specification for file uploads through GraphQL can be found [on Github](https://github.com/jaydenseric/graphql-multipart-request-spec).
 

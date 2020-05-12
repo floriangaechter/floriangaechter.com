@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <main className="flex-grow">{children}</main>
       <footer className="sm:flex items-center justify-between text-sm my-12">
-        <div className="flex items-center mb-4 sm:mb-0">
+        <div className="sm:flex items-center mb-4 sm:mb-0">
           © {new Date().getFullYear()}, Built with
           <a
             aria-label="Gatsby"
@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
             href="https://www.gatsbyjs.org/"
             rel="noreferrer noopener"
           >
-            <Gatsby className="h-4 ml-1" />
+            <Gatsby className="h-4 ml-1 inline" />
           </a>
           , running on
           <a
@@ -44,7 +44,7 @@ const Layout = ({ children }) => {
             href="https://www.netlify.com/"
             rel="noreferrer noopener"
           >
-            <Netlify className="h-4 ml-1" />
+            <Netlify className="h-4 ml-1 inline" />
           </a>
           . Illustration from
           <a
@@ -53,7 +53,7 @@ const Layout = ({ children }) => {
             href="https://www.openpeeps.com/"
             rel="noreferrer noopener"
           >
-            <Flo className="h-4 ml-1" />
+            <Flo className="h-4 ml-1 inline" />
           </a>
           .
         </div>
