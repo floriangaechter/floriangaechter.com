@@ -17,9 +17,11 @@ I'm going to assume you already have a [Home Assistant](https://www.home-assista
 The first thing we need to do is getting the URL we need for the integration. You'll find it in the "Video Stream" tab in the settings on your motionEye server. I'm using the _Fast Network Cam_ option, but you can use the normal mode as well. If you're using the normal mode, note down the Snapshot URL too, it can be used for the `still_image_url` property in the camera integration.
 
 **Normal Mode**
+
 ![Video Streaming Tab](video-streaming.png "Video Streaming Tab")
 
 **Fast Network Cam Mode**
+
 ![Video Streaming Tab / Fast Network Cam](video-streaming-fast-network-cam.png "Video Streaming Tab / Fast Network Cam")
 
 ## Home Assistant

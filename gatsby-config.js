@@ -146,23 +146,6 @@ module.exports = {
         icon: `src/images/floriangaechter.png`,
       },
     },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        tailwind: true,
-        whitelist: [
-          `mb-4`,
-          `mt-6`,
-          `mb-2`,
-          `max-w-xl`,
-          `list-disc`,
-          `pl-4`,
-          `list-decimal`,
-          `gatsby-highlight`,
-        ],
-        ignore: [`prismjs/`],
-      },
-    },
     `gatsby-plugin-offline`,
   ],
 }
