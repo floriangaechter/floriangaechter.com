@@ -14,14 +14,12 @@ I'm going to assume you already have a [Home Assistant](https://www.home-assista
 
 ## Get the stream URL
 
-The first thing we need to do is getting the URL we need for the integration. You can get it from the "Video Stream" tab in the settings on your motionEye server. I'm using the _Fast Network Cam_ option, but you can use the normal mode as well:
+The first thing we need to do is getting the URL we need for the integration. You'll find it in the "Video Stream" tab in the settings on your motionEye server. I'm using the _Fast Network Cam_ option, but you can use the normal mode as well. If you're using the normal mode, note down the Snapshot URL too, it can be used for the `still_image_url` property in the camera integration.
 
-### Normal Mode
-
+**Normal Mode**
 ![Video Streaming Tab](video-streaming.png "Video Streaming Tab")
 
-### Fast Network Cam Mode
-
+**Fast Network Cam Mode**
 ![Video Streaming Tab / Fast Network Cam](video-streaming-fast-network-cam.png "Video Streaming Tab / Fast Network Cam")
 
 ## Home Assistant
@@ -39,7 +37,7 @@ camera:
     mjpeg_url: "http://URLFROMMOTIONEYE:8081/mjpeg"
 ```
 
-Make sure to check that the port matches the one you set in motionEye.
+Make sure to check that the port matches the one you set in motionEye and to append `mjpeg` to actually get the mjpeg stream.
 
 Once the camera and the stream are set up properly, we need to add the picture entity card to Lovelace:
 
