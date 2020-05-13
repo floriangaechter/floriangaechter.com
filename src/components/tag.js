@@ -5,7 +5,7 @@ import React from "react"
 
 const Tag = ({ children }) => (
   <Link
-    to={`/blog/tags/${_.kebabCase(children)}`}
+    to={`/blog/tags/${_.kebabCase(children)}/`}
     className="inline-block bg-light-blue-vivid-100 text-light-blue-vivid-800 text-xs px-1 mx-1 rounded text-white font-bold"
   >
     {children}

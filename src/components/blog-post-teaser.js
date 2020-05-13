@@ -12,7 +12,7 @@ const BlogPostTeaser = ({ node }) => {
     >
       <header className="mb-2">
         <h3>
-          <Link to={`/blog${node.fields.slug}`}>{title}</Link>
+          <Link to={`/blog${node.fields.slug}/`}>{title}</Link>
         </h3>
         <small className="text-cool-grey-400">{node.frontmatter.date}</small>
         <div className="-ml-1">
@@ -32,7 +32,7 @@ const BlogPostTeaser = ({ node }) => {
         </div>
         <Link
           className="text-light-blue-vivid-700 font-bold transition-colors duration-300 ease-in-out hover:text-light-blue-vivid-900 flex items-center"
-          to={`/blog${node.fields.slug}`}
+          to={`/blog${node.fields.slug}/`}
         >
           Check it out
         </Link>

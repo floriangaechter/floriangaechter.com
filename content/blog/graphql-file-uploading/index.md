@@ -20,7 +20,7 @@ The idea is to send a [multi-part form request](https://developer.mozilla.org/en
 
 As the specs point out, the following GraphQL query should be sent to the server:
 
-```GraphQL
+```graphql
 {
   query: `
     mutation($file: Upload!) {
@@ -37,7 +37,7 @@ As the specs point out, the following GraphQL query should be sent to the server
 
 Which then will be uploaded as a multi-part form request:
 
-```
+```text
 --------------------------cec8e8123c05ba25
 Content-Disposition: form-data; name="operations"
 
@@ -61,7 +61,7 @@ Let's have a look at the different parts of the form request.
 
 1. `operations` contains the GraphQL query:
 
-```
+```text
 --------------------------cec8e8123c05ba25
 Content-Disposition: form-data; name="operations"
 { "query": "mutation ($file: Upload!) { singleUpload(file: $file) { id } }", "variables": { "file": null } }
@@ -69,7 +69,7 @@ Content-Disposition: form-data; name="operations"
 
 2. `map` is responsible for the mapping between the file-variable in the GraphQL query and the file attached to the request:
 
-```
+```text
 --------------------------cec8e8123c05ba25
 Content-Disposition: form-data; name="map"
 
@@ -78,7 +78,7 @@ Content-Disposition: form-data; name="map"
 
 3. And the file fields contain the actual files themselves:
 
-```
+```text
 --------------------------cec8e8123c05ba25
 Content-Disposition: form-data; name="0"; filename="a.txt"
 Content-Type: text/plain
@@ -139,7 +139,7 @@ If all goes well and your server is implemented according to the previously ment
 
 In case you want to upload multiple files, all we have to do is modify the GraphQL query to contain a list of files instead of just one file:
 
-```GraphQL
+```graphql
 {
   query: `
     mutation($file: Upload!) {
