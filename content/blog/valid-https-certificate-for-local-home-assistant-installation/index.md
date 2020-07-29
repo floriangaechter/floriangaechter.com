@@ -16,6 +16,8 @@ You probably know the pain. You want to be smart and try to run all the differen
 
 While, in my opinion, it's not too much of a security issue (since the whole traffic is contained to your home network), it's still bothering me to always have to add an exception for every local site I visit.
 
+There's an excellent service called [Let's Encrypt](https://letsencrypt.org/), which lets you generate valid https certificates automatically. But since I try to create a certificate that's valid for my local home network (which should be unreachable from the outside), this solution doesn't work for local domains.
+
 ## Meet mkcert
 
 There are a lot of examples on the web on how to create self-signed certificates that you then can add to your certificate store and get around the unsecured-issue. But they all seem to be rather complicated and take a lot of time. So I tried to find a simpler solution and stumbled upon [mkcert](https://github.com/FiloSottile/mkcert), a zero-config tool to make locally trusted certificates, by [Filippo Valsorda](https://filippo.io/).
@@ -48,4 +50,6 @@ Now restart Home Assistant and depending on your browser, it should pick up the 
 
 ## Conclusion
 
-As you see, it's super easy to generate a certificate that's accepted in the browser as valid, without hammering in 100 different commands. Of course, this isn't the _most_ secure method of doing it. But again, since you're in your own private home network, this shouldn't be too much of an issue. Plus, this method works for other services too. I use it to secure all of my locally hosted services like Synology NAS Diskstation, Nextcloud, etc.
+As you see, it's super easy to generate a certificate that's accepted in the browser as valid, without hammering in 100 different commands. Of course, this isn't the _most_ secure method of doing it. But again, since you're in your private home network, this shouldn't be too much of an issue. Plus, this method works for other services too. I use it to secure all of my locally hosted services like Synology NAS Diskstation, Nextcloud, etc.
+
+If you have questions, concerns or just want to say hi 👋, hit me up on [Twitter](https://twitter.com/neither1nor0).

@@ -71,7 +71,7 @@ const Layout = ({ children }) => {
             aria-label="E-mail"
             title="E-mail"
             className="mx-4"
-            href="mailto:florian.gaechter@gmail.com"
+            href="mailto:florian.gaechter@hey.com"
             rel="noreferrer noopener"
           >
             <Email className="h-4" />

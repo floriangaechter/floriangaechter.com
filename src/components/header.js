@@ -25,7 +25,7 @@ const Header = () => (
       <NavigationLink to="/" home={true}>
         Home
       </NavigationLink>
-      <NavigationLink to="/blog/">Blog</NavigationLink>
+      <NavigationLink to="/blog">Blog</NavigationLink>
     </nav>
   </header>
 )

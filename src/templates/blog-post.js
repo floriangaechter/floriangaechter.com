@@ -39,8 +39,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </article>
-      <nav>
-        <ul>
+      <nav className="mt-12">
+        <ul className="flex justify-between">
           <li>
             {previous && (
               <Link to={`/blog${previous.fields.slug}`} rel="prev">
