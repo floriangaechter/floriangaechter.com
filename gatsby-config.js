@@ -125,6 +125,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-matomo",
+      options: {
+        siteId: "YOUR_SITE_ID",
+        matomoUrl: "https://t.floriangaechter.com",
+        siteUrl: "https://www.floriangaechter.com",
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
