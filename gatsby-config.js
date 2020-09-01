@@ -127,7 +127,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-matomo",
       options: {
-        siteId: "YOUR_SITE_ID",
+        siteId: "1",
         matomoUrl: "https://t.floriangaechter.com",
         siteUrl: "https://www.floriangaechter.com",
       },
