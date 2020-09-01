@@ -130,6 +130,7 @@ module.exports = {
         siteId: "1",
         matomoUrl: "https://t.floriangaechter.com",
         siteUrl: "https://www.floriangaechter.com",
+        disableCookies: true,
       },
     },
     {
