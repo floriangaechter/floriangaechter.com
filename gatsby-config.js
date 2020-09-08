@@ -117,23 +117,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-157973279-1`,
-        anonymize: true,
-        respectDNT: true,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-matomo",
-      options: {
-        siteId: "1",
-        matomoUrl: "https://t.floriangaechter.com",
-        siteUrl: "https://www.floriangaechter.com",
-        disableCookies: true,
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
