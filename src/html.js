@@ -13,7 +13,7 @@ export default function HTML(props) {
         />
         {props.headComponents}
         <script
-          src="https://cdn.usefathom.com/script.js"
+          src="https://bobcat.floriangaechter.com/script.js"
           spa="auto"
           site="ZKVTVXNH"
           defer
