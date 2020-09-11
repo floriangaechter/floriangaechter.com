@@ -44,6 +44,16 @@ h3 {
   @apply rounded;
 }
 
+.tooltip {
+    color: theme("colors.white");
+    background-color: theme("colors.cool-grey-700") !important;
+    border-radius: 9999px !important;
+}
+
+.tooltip::after {
+    border-top-color: theme("colors.cool-grey-700") !important;
+}
+
 @screen md {
   .gatsby-resp-image-wrapper {
     width: 636px !important;

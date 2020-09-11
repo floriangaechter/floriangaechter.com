@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import ReactTooltip from "react-tooltip"
 import { ReactComponent as Gatsby } from "../images/gatsby.svg"
 import { ReactComponent as Netlify } from "../images/netlify.svg"
 import { ReactComponent as Email } from "../images/email.svg"
@@ -8,6 +9,7 @@ import { ReactComponent as RSS } from "../images/rss.svg"
 import { ReactComponent as Github } from "../images/github.svg"
 import { ReactComponent as Twitter } from "../images/twitter.svg"
 import { ReactComponent as Flo } from "../images/floriangaechter.svg"
+import { ReactComponent as Fathom } from "../images/fathom.svg"
 
 import Header from "./header"
 
@@ -27,7 +29,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <main className="flex-grow">{children}</main>
       <footer className="sm:flex items-center justify-between text-sm my-12">
-        <div className="sm:flex items-center mb-4 sm:mb-0">
+        <div className="lg:flex items-center mb-4 lg:mb-0">
           © {new Date().getFullYear()}, Built with
           <a
             aria-label="Gatsby"
@@ -55,7 +57,18 @@ const Layout = ({ children }) => {
           >
             <Flo className="h-4 ml-1 inline" />
           </a>
-          .
+          , and analytics running on
+          <a
+            aria-label="Fathom"
+            title="Fathom"
+            href="https://usefathom.com/ref/YJ1Q3F"
+            rel="noopener"
+            onClick={() => window.fathom.trackGoal("MU4U4IVW", 0)}
+            data-tip="This is an affilate link, just so you know…"
+          >
+            <Fathom className="h-4 ml-1 inline" />
+          </a>
+          <ReactTooltip effect="solid" className="tooltip" />.
         </div>
         <div className="flex items-center -ml-4 sm:-ml-0 -mr-4">
           <a
@@ -91,6 +104,7 @@ const Layout = ({ children }) => {
             className="mx-4"
             href="https://twitter.com/neither1nor0"
             rel="noreferrer noopener"
+            onClick={() => window.fathom.trackGoal("JRMRLMIR", 0)}
           >
             <Twitter className="h-4" />
           </a>
