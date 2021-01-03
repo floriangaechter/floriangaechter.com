@@ -10,6 +10,7 @@ import { ReactComponent as Github } from "../images/github.svg"
 import { ReactComponent as Twitter } from "../images/twitter.svg"
 import { ReactComponent as Flo } from "../images/floriangaechter.svg"
 import { ReactComponent as Fathom } from "../images/fathom.svg"
+import { ReactComponent as Key } from "../images/key.svg"
 
 import Header from "./header"
 
@@ -37,7 +38,7 @@ const Layout = ({ children }) => {
             href="https://www.gatsbyjs.org/"
             rel="noreferrer noopener"
           >
-            <Gatsby className="h-4 ml-1 inline" />
+            <Gatsby className="align-text-bottom h-4 inline-block ml-1" />
           </a>
           , running on
           <a
@@ -46,7 +47,7 @@ const Layout = ({ children }) => {
             href="https://www.netlify.com/"
             rel="noreferrer noopener"
           >
-            <Netlify className="h-4 ml-1 inline" />
+            <Netlify className="align-text-bottom h-4 ml-1 inline-block" />
           </a>
           . Illustration from
           <a
@@ -55,7 +56,7 @@ const Layout = ({ children }) => {
             href="https://www.openpeeps.com/"
             rel="noreferrer noopener"
           >
-            <Flo className="h-4 ml-1 inline" />
+            <Flo className="align-text-bottom h-4 ml-1 inline-block" />
           </a>
           , and analytics running on
           <a
@@ -63,21 +64,15 @@ const Layout = ({ children }) => {
             title="Fathom"
             href="https://usefathom.com/ref/YJ1Q3F"
             rel="noopener"
-            onClick={() => window.fathom.trackGoal("MU4U4IVW", 0)}
+            onClick={() => window.fathom.trackGoal(`MU4U4IVW`, 0)}
             data-tip="This is an affilate link, just so you know…"
           >
-            <Fathom className="h-4 ml-1 inline" />
+            <Fathom className="align-text-bottom h-4 ml-1 inline-block" />
           </a>
           <ReactTooltip effect="solid" className="tooltip" />.
         </div>
         <div className="flex items-center -ml-4 sm:-ml-0 -mr-4">
-          <a
-            aria-label="RSS"
-            title="RSS"
-            className="mx-4"
-            href="/rss.xml"
-            rel="noreferrer noopener"
-          >
+          <a aria-label="RSS" title="RSS" className="mx-4" href="/rss.xml">
             <RSS className="h-4" />
           </a>
           <a
@@ -85,7 +80,6 @@ const Layout = ({ children }) => {
             title="E-mail"
             className="mx-4"
             href="mailto:florian.gaechter@hey.com"
-            rel="noreferrer noopener"
           >
             <Email className="h-4" />
           </a>
@@ -94,7 +88,6 @@ const Layout = ({ children }) => {
             title="Github"
             className="mx-4"
             href="https://github.com/floriangaechter/"
-            rel="noreferrer noopener"
           >
             <Github className="h-4" />
           </a>
@@ -103,10 +96,18 @@ const Layout = ({ children }) => {
             title="Twitter"
             className="mx-4"
             href="https://twitter.com/neither1nor0"
-            rel="noreferrer noopener"
-            onClick={() => window.fathom.trackGoal("JRMRLMIR", 0)}
+            onClick={() => window.fathom.trackGoal(`JRMRLMIR`, 0)}
           >
             <Twitter className="h-4" />
+          </a>
+          <a
+            aria-label="Public Key"
+            title="Public Key"
+            className="mx-4"
+            href="/Users/flo/Code/floriangaechter.com/static/3BFA57510D130FBC709DA1B2DD76FECABC24E425.asc"
+            onClick={() => window.fathom.trackGoal(`VSQXXW27`, 0)}
+          >
+            <Key className="h-4" />
           </a>
         </div>
       </footer>
