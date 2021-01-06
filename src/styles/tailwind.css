@@ -28,6 +28,10 @@ h3 {
   top: -7px;
 }
 
+.blog-post hr {
+    @apply mb-4;
+}
+
 .gatsby-highlight {
   @apply mb-4;
 }

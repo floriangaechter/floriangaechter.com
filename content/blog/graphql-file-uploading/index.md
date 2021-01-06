@@ -1,6 +1,7 @@
 ---
 title: GraphQL File Uploading (Without Apollo…)
 date: "2020-02-10"
+modified: "2021-01-06"
 year: 2020
 description: Learn how to upload files with GraphQL but without using libraries or frameworks like Apollo.
 tags: ["GraphQL", "JavaScript"]
@@ -9,6 +10,10 @@ ogImage: ./loading-timber-at-southampton-docks.jpg
 ---
 
 ![Loading Timber at Southampton Docks – C. R. W. Nevinson](loading-timber-at-southampton-docks.jpg "Loading Timber at Southampton Docks – C. R. W. Nevinson")
+
+***Update January 6, 2021:*** I realized the multi-file upload example had some errors in it. They’re fixed now, and everything should be working as expected.
+
+***
 
 This quick tutorial explains how to upload files with GraphQL using only plain JavaScript and no frameworks or libraries. It's not meant as a complete tutorial as I won't be covering the backend side of the implementation.
 
@@ -110,7 +115,7 @@ const formData = new FormData()
 Create the `operations` field, containing the GraphQL query, and append it to the form request:
 
 ```javascript
-const operations = `{ "query": "mutation ($file: Upload!, $path: String) { upload(file: $file, path: $path) }", "variables": { "file": null, "path": "coins" } }`
+const operations = `{ "query": "mutation ($file: Upload!) { singleUpload(file: $file) { id } }", "variables": { "file": null } }`
 formData.append("operations", operations)
 ```
 
@@ -142,8 +147,8 @@ In case you want to upload multiple files, all we have to do is modify the Graph
 ```graphql
 {
   query: `
-    mutation($file: Upload!) {
-      singleUpload(file: $file) {
+    mutation($file: [Upload!]!) {
+      multipleUpload(files: $files) {
         id
       }
     }
@@ -155,6 +160,12 @@ In case you want to upload multiple files, all we have to do is modify the Graph
     ]
   }
 }
+```
+
+Define the operations part:
+```javascript
+const operations = `{ "query": "mutation ($files: [Upload!]!) { multipleUpload(files: $files) { id } }", "variables": { "files": [null, null] } }`
+formData.append("operations", operations)
 ```
 
 Add the mappings between the files and the variables to the `map` operation and append the files:

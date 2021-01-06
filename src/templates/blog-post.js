@@ -84,6 +84,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        modified(formatString: "MMMM DD, YYYY")
         description
         tags
         keywords
