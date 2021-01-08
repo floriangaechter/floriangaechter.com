@@ -2,10 +2,6 @@ module.exports = {
   purge: {
     content: [`./src/**/*.js`],
   },
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
   theme: {
     fontFamily: {
       sans: [`Inter`, `sans-serif`],
