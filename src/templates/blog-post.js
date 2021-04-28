@@ -19,7 +19,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         date={post.frontmatter.date}
         modified={post.frontmatter.modified || post.frontmatter.date}
         ogImage={data.site.siteMetadata.siteUrl.concat(
-          post.frontmatter.ogImage.childImageSharp.fixed.src
+          post.frontmatter.ogImage.childImageSharp.gatsbyImageData.src
         )}
         isBlogPost={true}
         keywords={post.frontmatter.keywords}
@@ -58,7 +58,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </ul>
       </nav>
     </Layout>
-  )
+  );
 }
 
 BlogPostTemplate.propTypes = {
@@ -69,33 +69,30 @@ BlogPostTemplate.propTypes = {
 
 export default BlogPostTemplate
 
-export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        siteUrl
-      }
+export const pageQuery = graphql`query BlogPostBySlug($slug: String!) {
+  site {
+    siteMetadata {
+      title
+      siteUrl
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      frontmatter {
-        title
-        date(formatString: "MMMM DD, YYYY")
-        modified(formatString: "MMMM DD, YYYY")
-        description
-        tags
-        keywords
-        ogImage {
-          childImageSharp {
-            fixed(height: 1200, width: 1200) {
-              src
-            }
-          }
+  }
+  markdownRemark(fields: {slug: {eq: $slug}}) {
+    id
+    excerpt(pruneLength: 160)
+    html
+    frontmatter {
+      title
+      date(formatString: "MMMM DD, YYYY")
+      modified(formatString: "MMMM DD, YYYY")
+      description
+      tags
+      keywords
+      ogImage {
+        childImageSharp {
+          gatsbyImageData(width: 1200, placeholder: TRACED_SVG, layout: FIXED, formats: [AUTO, WEBP, AVIF])
         }
       }
     }
   }
+}
 `

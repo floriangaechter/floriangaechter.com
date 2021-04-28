@@ -17,7 +17,7 @@ export default function HTML(props) {
           spa="auto"
           site="ZKVTVXNH"
           defer
-        ></script>
+        />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}

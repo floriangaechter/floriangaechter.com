@@ -24,6 +24,7 @@ module.exports = {
               linkImagesToOriginal: false,
               maxWidth: 836,
               withWebp: { quality: 80 },
+              withAvif: { quality: 80 },
               tracedSVG: {
                 color: `#40c3f7`,
                 turnPolicy: `TURNPOLICY_MAJORITY`,
@@ -124,6 +125,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-svgr`,

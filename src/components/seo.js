@@ -99,41 +99,36 @@ const SEO = ({
   keywords,
 }) => {
   const { site, ogImageDefault, logoDefault } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-            siteUrl
-          }
-        }
-        ogImageDefault: file(relativePath: { eq: "ogimage.jpg" }) {
-          childImageSharp {
-            fixed(height: 1200, width: 1200) {
-              src
-            }
-          }
-        }
-        logoDefault: file(relativePath: { eq: "floriangaechter.png" }) {
-          childImageSharp {
-            fixed(height: 512, width: 512) {
-              src
-            }
-          }
-        }
-      }
-    `
+    graphql`{
+  site {
+    siteMetadata {
+      title
+      description
+      author
+      siteUrl
+    }
+  }
+  ogImageDefault: file(relativePath: {eq: "ogimage.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(height: 1200, width: 1200, placeholder: BLURRED, layout: FIXED)
+    }
+  }
+  logoDefault: file(relativePath: {eq: "floriangaechter.png"}) {
+    childImageSharp {
+      gatsbyImageData(height: 512, width: 512, placeholder: BLURRED, layout: FIXED)
+    }
+  }
+}
+`
   )
 
   const metaDescription = description || site.siteMetadata.description
   const ogImage =
     ogImageProp ||
-    site.siteMetadata.siteUrl.concat(ogImageDefault.childImageSharp.fixed.src)
+    site.siteMetadata.siteUrl.concat(ogImageDefault.childImageSharp.gatsbyImageData.src)
   const ogTitle = title || site.siteMetadata.title
   const logo = site.siteMetadata.siteUrl.concat(
-    logoDefault.childImageSharp.fixed.src
+    logoDefault.childImageSharp.gatsbyImageData.src
   )
 
   const schemaOrgJSONLD = getSchemaOrgJSONLD({
