@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/neither1nor0
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.floriangaechter.com
+  * I am neither1nor0 (https://keybase.io/neither1nor0) on keybase.
+  * I have a public key ASAHu3u91C5fOdzW7r6b6mghDFdLPgLhQ1wcWFpedKUUnwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012007bb7bbdd42e5f39dcd6eebe9bea68210c574b3e02e1435c1c585a5e74a5149f0a",
+      "host": "keybase.io",
+      "kid": "012007bb7bbdd42e5f39dcd6eebe9bea68210c574b3e02e1435c1c585a5e74a5149f0a",
+      "uid": "826d8973c8c22d78b9d975c047560519",
+      "username": "neither1nor0"
+    },
+    "merkle_root": {
+      "ctime": 1621236749,
+      "hash": "339a62fe2e7bd817b7f2673e319e0cdaba7327912a0fe6efd9c12c41879a111d61f3a0984ba5de9a93d161cff31d5a2869a17fb2650c007152b7ac9fbbd07634",
+      "hash_meta": "9f5296f706b677546199a681d6538c613b1d140670985baee60b400b59f25f10",
+      "seqno": 19964276
+    },
+    "service": {
+      "entropy": "7/bDouY1M5xh0C5wBmtUEnfQ",
+      "hostname": "www.floriangaechter.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.6.2"
+  },
+  "ctime": 1621236757,
+  "expire_in": 504576000,
+  "prev": "f9006be7bbede1b17a9fc04252a0fd30624538d32a751bfc30e9446728d515c3",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgB7t7vdQuXznc1u6+m+poIQxXSz4C4UNcHFhaXnSlFJ8Kp3BheWxvYWTESpcCCMQg+QBr57vt4bF6n8BCUqD9MGJFONMqdRv8MOlEZyjVFcPEIPnsR0wuc0DIugAM9CvxiNpWiTgmMPgEaBuhxAj/cYkhAgHCo3NpZ8RA2VbKv0h7mMfeYqxpcGb+QIDj1Nn3vram+XpzVh4OM6C1TbOQTHIYNuEGKV3tk3NX3KCkTCf2nWDZ9VnCqPGvAKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIFiiV5hL9bSudLy1moSTZg6PHYsBQAD2tfQSp3puzuLeo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/neither1nor0
+
+==================================================================
