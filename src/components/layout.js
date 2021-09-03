@@ -104,7 +104,7 @@ const Layout = ({ children }) => {
             aria-label="Public Key"
             title="Public Key"
             className="mx-4"
-            href="/Users/flo/Code/floriangaechter.com/static/3BFA57510D130FBC709DA1B2DD76FECABC24E425.asc"
+            href="/3BFA57510D130FBC709DA1B2DD76FECABC24E425.asc"
             onClick={() => window.fathom.trackGoal(`VSQXXW27`, 0)}
           >
             <Key className="h-4" />
