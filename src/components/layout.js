@@ -10,7 +10,6 @@ import { ReactComponent as Github } from "../images/github.svg"
 import { ReactComponent as Twitter } from "../images/twitter.svg"
 import { ReactComponent as Flo } from "../images/floriangaechter.svg"
 import { ReactComponent as Fathom } from "../images/fathom.svg"
-import { ReactComponent as Key } from "../images/key.svg"
 
 import Header from "./header"
 
@@ -79,7 +78,7 @@ const Layout = ({ children }) => {
             aria-label="E-mail"
             title="E-mail"
             className="mx-4"
-            href="mailto:florian.gaechter@hey.com"
+            href="mailto:flo@gaechter.xyz"
           >
             <Email className="h-4" />
           </a>
@@ -99,15 +98,6 @@ const Layout = ({ children }) => {
             onClick={() => window.fathom.trackGoal(`JRMRLMIR`, 0)}
           >
             <Twitter className="h-4" />
-          </a>
-          <a
-            aria-label="Public Key"
-            title="Public Key"
-            className="mx-4"
-            href="/3BFA57510D130FBC709DA1B2DD76FECABC24E425.asc"
-            onClick={() => window.fathom.trackGoal(`VSQXXW27`, 0)}
-          >
-            <Key className="h-4" />
           </a>
         </div>
       </footer>
