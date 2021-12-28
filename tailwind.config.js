@@ -1,7 +1,5 @@
 module.exports = {
-  purge: {
-    content: [`./src/**/*.js`],
-  },
+  content: [`./src/**/*.js`],
   theme: {
     fontFamily: {
       sans: [`Inter`, `sans-serif`],
@@ -84,7 +82,7 @@ module.exports = {
     container: false,
   },
   plugins: [
-    function({ addComponents }) {
+    function ({ addComponents }) {
       addComponents({
         ".container": {
           maxWidth: `100%`,
