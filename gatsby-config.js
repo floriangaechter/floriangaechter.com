@@ -82,7 +82,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.description,
                   date: edge.node.frontmatter.date,
@@ -142,5 +142,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-plugin-fathom",
+      options: {
+        trackingUrl: "descriptive-reward.floriangaechter.com",
+        siteId: "ZKVTVXNH",
+      },
+    },
   ],
 }
