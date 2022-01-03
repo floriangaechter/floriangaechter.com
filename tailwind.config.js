@@ -2,7 +2,7 @@ module.exports = {
   content: [`./src/**/*.js`],
   theme: {
     fontFamily: {
-      sans: [`Inter`, `sans-serif`],
+      sans: [`Manrope`, `sans-serif`],
     },
     extend: {
       colors: {

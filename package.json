@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Florian Gächter <florian.gaechter@gmail.com>",
   "dependencies": {
-    "@fontsource/inter": "^4.2.2",
+    "@fontsource/manrope": "^4.5.1",
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
     "@svgr/webpack": "^6.1.2",
