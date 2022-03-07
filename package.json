@@ -6,8 +6,8 @@
   "author": "Florian Gächter <florian.gaechter@gmail.com>",
   "dependencies": {
     "@fontsource/manrope": "^4.5.1",
-    "@mdx-js/mdx": "^1.6.16",
-    "@mdx-js/react": "^1.6.16",
+    "@mdx-js/mdx": "^2.0.0",
+    "@mdx-js/react": "^2.0.0",
     "@svgr/webpack": "^6.1.2",
     "autoprefixer": "^10.2.1",
     "gatsby": "^4.4.0",
