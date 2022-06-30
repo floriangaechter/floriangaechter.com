@@ -19,8 +19,8 @@ const IndexPage = ({ data }) => {
         isBlogPost={false}
       />
       <div className="mb-12 border-b border-cool-grey-100">
-        <div className="flex items-center sm:items-start flex-col sm:flex-row">
-          <div className="sm:mr-12 order-last sm:order-none mt-12 sm:mt-0">
+        <div className="flex flex-col items-center sm:items-start sm:flex-row">
+          <div className="order-last mt-12 sm:mr-12 sm:order-none sm:mt-0">
             <Flo className="h-64" />
           </div>
           <div className="order-first sm:order-none">
@@ -38,7 +38,8 @@ const IndexPage = ({ data }) => {
                 Frontify
               </ExternalLink>
               {` `}
-              as an Senior Frontend Engineer in the Marketing Team.
+              as Developer Advocate, helping developers to connect to – and
+              rebuild – their brand platform.
             </div>
             <p>This are some things I’ve learned so far…</p>
           </div>
