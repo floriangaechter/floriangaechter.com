@@ -14,7 +14,7 @@ const { alt, caption, src } = Astro.props as Props;
 	caption ? (
 		<figure class="bg-white rounded-md overflow-hidden not-prose">
 			<Img src={src} alt={alt} placeholder="none" />
-			<figcaption class="m-2 text-sm text-gray-500 dark:text-gray-100">
+			<figcaption class="m-2 text-sm text-gray-500">
 				{caption}
 			</figcaption>
 		</figure>
