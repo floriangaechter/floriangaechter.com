@@ -5,13 +5,16 @@ import alpinejs from "@astrojs/alpinejs";
 import { astroImageTools } from "astro-imagetools";
 
 // https://astro.build/config
+import sitemap from "@astrojs/sitemap";
+
+// https://astro.build/config
 export default defineConfig({
-	integrations: [tailwind(), mdx(), alpinejs(), astroImageTools],
-	site: "https://www.floriangaechter.com/",
-	trailingSlash: "always",
-	markdown: {
-		shikiConfig: {
-			theme: "nord",
-		},
-	},
+  integrations: [tailwind(), mdx(), alpinejs(), astroImageTools, sitemap()],
+  site: "https://www.floriangaechter.com/",
+  trailingSlash: "always",
+  markdown: {
+    shikiConfig: {
+      theme: "nord"
+    }
+  }
 });
