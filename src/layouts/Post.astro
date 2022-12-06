@@ -1,0 +1,30 @@
+---
+import MainLayout from "../layouts/Main.astro";
+import Heading from "src/components/Heading.astro";
+import { Icon } from "astro-icon";
+import { getMonthName } from "src/utils";
+
+const { frontmatter } = Astro.props;
+const date = new Date(frontmatter.pubDate);
+const [month, day, year] = [
+	getMonthName(date),
+	date.getDate(),
+	date.getUTCFullYear(),
+];
+---
+
+<MainLayout title={frontmatter.title}>
+	<Heading
+		title={frontmatter.title}
+		subtitle={`${month} ${day}, ${year}`}
+		article={true}
+	/>
+	<article class="py-32 prose mx-auto">
+		<slot />
+		<div class="pt-8">
+			If you have questions, concerns or just want to say hi 👋, hit me up on <a
+				href="https://twitter.com/neither1nor0">Twitter</a
+			> or <a href="https://mastodon.social/@neither1nor0">Mastodon</a>.
+		</div>
+	</article>
+</MainLayout>

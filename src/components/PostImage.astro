@@ -1,0 +1,26 @@
+---
+import { Img } from "astro-imagetools/components";
+
+export interface Props {
+	alt: string;
+	caption: string;
+	src: string;
+}
+
+const { alt, caption, src } = Astro.props as Props;
+---
+
+{
+	caption ? (
+		<figure class="bg-gray-100 rounded-md overflow-hidden">
+			<Img src={src} alt={alt} />
+			<figcaption class="m-2 text-sm text-gray-500 dark:text-gray-100">
+				{caption}
+			</figcaption>
+		</figure>
+	) : (
+		<div class="flex justify-center">
+			<Img src={src} alt={alt} />
+		</div>
+	)
+}

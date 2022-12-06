@@ -1,0 +1,27 @@
+---
+import { getMonthName } from '../utils';
+
+const { frontmatter: post, url } = Astro.props.post;
+const date = new Date(post.pubDate);
+const [month, day, year] = [getMonthName(date), date.getDate(), date.getUTCFullYear()];
+---
+
+<div>
+	<h2>
+		<a
+			href={url}
+			title={post.title}
+			class="text-2xl hover:text-teal tracking-tight leading-tight font-bold"
+		>
+			{post.title}
+		</a>
+	</h2>
+	<div class="flex">
+		<p class="text-gray-600">
+			<span class="text-gray-800 text-sm uppercase tracking-widest font-medium"
+				>{month} {day}, {year}
+			</span> —
+			{post.description}
+		</p>
+	</div>
+</div>

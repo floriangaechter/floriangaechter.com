@@ -1,0 +1,28 @@
+---
+import { Icon } from 'astro-icon';
+
+const year = new Date().getFullYear();
+---
+
+<nav class="flex items-center justify-between flex-wrap py-12 lg:py-24 max-w-5xl mx-auto">
+	<div class="text-sm">
+		&copy; {year} – Powered by <a href="https://astro.build/" class="transition-colors hover:text-gray-600">Astro</a>
+	</div>
+	<div class="flex items-center">
+        <a href="https://www.floriangaechter.com/rss.xml" class="ml-4" aria-label="RSS" rel="noopener">
+			<Icon name="rss" class="h-6 w-6 transition-colors hover:text-gray-600" />
+		</a>
+		<a href="https://twitter.com/neither1nor0" class="ml-4" aria-label="Twitter" rel="noopener">
+			<Icon name="twitter" class="h-6 w-6 transition-colors hover:text-gray-600" />
+		</a>
+		<a href="https://mastodon.social/@neither1nor0" class="ml-4" aria-label="Mastodon" rel="noopener">
+			<Icon name="mastodon" class="h-6 w-6 transition-colors hover:text-gray-600" />
+		</a>
+		<a href="https://github.com/floriangaechter/" class="ml-4" aria-label="GitHub" rel="noopener">
+			<Icon name="github" class="h-6 w-6 transition-colors hover:text-gray-600" />
+		</a>
+		<a href="mailto:flo@gaechter.xyz" class="ml-4" aria-label="Email" rel="noopener">
+			<Icon name="email" class="h-6 w-6 transition-colors hover:text-gray-600" />
+		</a>
+	</div>
+</nav>

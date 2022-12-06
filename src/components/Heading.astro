@@ -1,0 +1,22 @@
+---
+import classNames from "classnames";
+
+export interface Props {
+	article: boolean;
+	title: string;
+	subtitle: string;
+	intro?: string;
+}
+
+const { title, subtitle, intro, article } = Astro.props as Props;
+---
+
+<header class={classNames("prose max-w-none", { "pb-16 lg:pb-32": !article })}>
+	<p class="font-medium text-lg text-gray-500 mb-6">{subtitle}</p>
+	<h1
+		class="text-6xl mb-16 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-blue-600"
+	>
+		{title}
+	</h1>
+	{intro && <p>{intro}</p>}
+</header>

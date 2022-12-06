@@ -1,0 +1,69 @@
+---
+import { Icon } from 'astro-icon';
+import classNames from 'classnames';
+
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
+<nav class="flex items-center justify-between flex-wrap py-10 max-w-5xl mx-auto">
+	<div class="text-md antialiased font-medium">
+		<a href="/" class="flex text-xl mr-12 font-black group"
+			><Icon name="florian" class="w-6 h-6 rounded-full mr-6 transition-colors text-gray-600 group-hover:text-gray-800" /> Florian Gächter
+		</a>
+	</div>
+	<div class="block lg:hidden">
+		<button
+			class="flex items-center px-3 text-gray-800"
+			x-bind:class="{'flex': ! showMobileNav, 'hidden': showMobileNav}"
+			@click="showMobileNav = true"
+		>
+			<svg class="fill-current h-5 w-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+				<title>Open Menu</title>
+				<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+			</svg>
+		</button>
+		<button
+			class="hidden items-center px-3 text-gray-800"
+			x-bind:class="{'flex': showMobileNav, 'hidden': ! showMobileNav}"
+			@click="showMobileNav = false"
+			x-cloak
+		>
+			<svg class="fill-current h-5 w-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+				<title>Close Menu</title>
+				<path
+					d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"
+				></path>
+			</svg>
+		</button>
+	</div>
+	<div
+		class="hidden w-full lg:w-auto lg:flex items-center"
+		x-bind:class="{ 'hidden': ! showMobileNav }"
+	>
+		<a
+			href="/"
+			class={classNames(`block mt-4 lg:inline-block hover:text-gray-800 lg:mt-0 mr-12`, {
+				'font-bold text-gray-800': currentPath === '',
+				'text-gray-600': currentPath !== '',
+			})}
+			>Home
+		</a>
+		<a
+			href="/about"
+			class={classNames(`block mt-4 lg:inline-block hover:text-gray-800 lg:mt-0 mr-12`, {
+				'font-bold text-gray-800': currentPath === 'about',
+				'text-gray-600': currentPath !== 'about',
+			})}
+			>About
+		</a>
+		<a
+			href="mailto:flo@gaechter.xyz"
+			class={classNames(`block mt-4 lg:inline-block hover:text-gray-800 lg:mt-0`, {
+				'font-bold text-gray-800': currentPath === 'contact',
+				'text-gray-600': currentPath !== 'contact',
+			})}
+			>Contact
+		</a>
+	</div>
+</nav>
