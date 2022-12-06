@@ -2,6 +2,10 @@
 import "@fontsource/inter/variable.css";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import {
+	BackgroundImage,
+	ImageSupportDetection,
+} from "astro-imagetools/components";
 
 export interface Props {
 	title: string;
@@ -27,13 +31,17 @@ const { title } = Astro.props as Props;
 		</style>
 	</head>
 	<body
-		class="bg-[url('/lake.jpg')] bg-cover font-sans leading-normal text-gray-800 px-4 sm:px-10"
+		class="font-sans leading-normal text-gray-800"
 		x-data="{ showMobileNav: false }"
 	>
-		<Navigation />
-		<div class="max-w-5xl mx-auto relative py-16 lg:pt-40 lg:pb-32">
-			<slot />
-		</div>
-		<Footer />
+		<BackgroundImage src="/lake.jpg">
+			<div class="px-4 sm:px-10">
+				<Navigation />
+				<div class="max-w-5xl mx-auto relative py-16 lg:pt-40 lg:pb-32">
+					<slot />
+				</div>
+				<Footer />
+			</div>
+		</BackgroundImage>
 	</body>
 </html>
