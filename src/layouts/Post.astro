@@ -13,7 +13,7 @@ const [month, day, year] = [
 ];
 ---
 
-<MainLayout title={frontmatter.title}>
+<MainLayout title={frontmatter.title} description={frontmatter.description}>
 	<Heading
 		title={frontmatter.title}
 		subtitle={`${month} ${day}, ${year}`}

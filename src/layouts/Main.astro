@@ -8,10 +8,11 @@ import {
 } from "astro-imagetools/components";
 
 export interface Props {
+	description: string;
 	title: string;
 }
 
-const { title } = Astro.props as Props;
+const { description, title } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -21,7 +22,7 @@ const { title } = Astro.props as Props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="{{ excerpt ?? title }}" />
+		<meta name="description" content={description} />
 		<meta name="theme-color" content="78716c" />
 		<title>{title} | Florian Gächter</title>
 		<style>
@@ -29,6 +30,7 @@ const { title } = Astro.props as Props;
 				font-feature-settings: "frac" 1;
 			}
 		</style>
+		<ImageSupportDetection />
 	</head>
 	<body
 		class="font-sans leading-normal text-gray-800"
