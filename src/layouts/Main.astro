@@ -4,7 +4,6 @@ import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import {
 	BackgroundImage,
-	ImageSupportDetection,
 } from "astro-imagetools/components";
 
 export interface Props {
@@ -30,7 +29,6 @@ const { description, title } = Astro.props as Props;
 				font-feature-settings: "frac" 1;
 			}
 		</style>
-		<ImageSupportDetection />
 	</head>
 	<body
 		class="font-sans leading-normal text-gray-800"
