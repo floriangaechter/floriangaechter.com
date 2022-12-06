@@ -13,7 +13,6 @@
   },
   "devDependencies": {
     "@astrojs/alpinejs": "^0.1.2",
-    "@astrojs/image": "^0.12.0",
     "@astrojs/mdx": "^0.12.0",
     "@astrojs/netlify": "^1.2.1",
     "@astrojs/tailwind": "^2.1.3",
