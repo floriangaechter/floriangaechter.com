@@ -1,7 +1,6 @@
 ---
 import MainLayout from "../layouts/Main.astro";
 import Heading from "src/components/Heading.astro";
-import { Icon } from "astro-icon";
 import { getMonthName } from "src/utils";
 
 const { frontmatter } = Astro.props;
@@ -13,7 +12,7 @@ const [month, day, year] = [
 ];
 ---
 
-<MainLayout title={frontmatter.title} description={frontmatter.description}>
+<MainLayout title={frontmatter.title} keywords={frontmatter.keywords} description={frontmatter.description}>
 	<Heading
 		title={frontmatter.title}
 		subtitle={`${month} ${day}, ${year}`}

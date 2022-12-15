@@ -9,9 +9,10 @@ import {
 export interface Props {
 	description: string;
 	title: string;
+	keywords: string[];
 }
 
-const { description, title } = Astro.props as Props;
+const { description, title, keywords } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -24,6 +25,7 @@ const { description, title } = Astro.props as Props;
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<meta name="theme-color" content="f6f7fb" />
+		<meta name="keywords" content={keywords.join(', ')}>
 		<title>{title} | Florian Gächter</title>
 		<style>
 			body {
