@@ -31,7 +31,13 @@ const { description, title, keywords } = Astro.props as Props;
 			"@type": "Person",
 			"name": "Florian Gächter",
 			"url": "https://www.floriangaechter.com/",
-			"image": "https://www.floriangaechter.com/floriangaechter.jpg",
+			"image": {
+				"@type": "ImageObject",
+				"url": "https://www.floriangaechter.com/floriangaechter.jpg",
+				"caption": "Florian Gächter",
+				"width": "600",
+				"height": "400"
+			},
 			"sameAs": [
 				"https://twitter.com/neither1nor0",
 				"https://www.linkedin.com/in/florian-g%C3%A4chter-39b013188/",
@@ -40,7 +46,9 @@ const { description, title, keywords } = Astro.props as Props;
 			"jobTitle": "Developer Advocate",
 			"worksFor": {
 				"@type": "Organization",
-				"name": "Frontify"
+				"name": "Frontify",
+				"url": "https://www.frontify.com/en/",
+				"sameAs": ["https://www.google.com/search?kgmid=/g/11g9mv8ly4"]
 			}
 		})} />
 		<title>{title} | Florian Gächter</title>
