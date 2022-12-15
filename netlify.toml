@@ -7,6 +7,10 @@
   to = "/posts/graphql-file-uploading/"
 
 [[redirects]]
+  from = "/blog/graphql-upload/"
+  to = "/posts/graphql-file-uploading/"
+
+[[redirects]]
   from = "/blog/valid-https-certificate-for-local-home-assistant-installation/"
   to = "/posts/valid-https-certificate-for-local-home-assistant-installation/"
 
