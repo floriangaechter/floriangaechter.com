@@ -26,6 +26,23 @@ const { description, title, keywords } = Astro.props as Props;
 		<meta name="description" content={description} />
 		<meta name="theme-color" content="f6f7fb" />
 		<meta name="keywords" content={keywords.join(', ')}>
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org/",
+			"@type": "Person",
+			"name": "Florian Gächter",
+			"url": "https://www.floriangaechter.com/",
+			"image": "",
+			"sameAs": [
+				"https://twitter.com/neither1nor0",
+				"https://www.linkedin.com/in/florian-g%C3%A4chter-39b013188/",
+				"https://github.com/floriangaechter"
+			],
+			"jobTitle": "Developer Advocate",
+			"worksFor": {
+				"@type": "Organization",
+				"name": "Frontify"
+			}
+		})} />
 		<title>{title} | Florian Gächter</title>
 		<style>
 			body {
