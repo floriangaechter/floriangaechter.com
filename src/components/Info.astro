@@ -6,12 +6,12 @@ export interface Props {
 const { title } = Astro.props as Props;
 ---
 
-<div class="flex rounded-md p-6 pb-1 mb-12 bg-sky-50">
+<div class="flex rounded-md p-6 pb-1 mb-12 bg-sky-500">
 	<div class="flex-auto">
-		<p class="m-0 font-bold text-sky-900">
+		<p class="m-0 font-bold text-white">
 			{title}
 		</p>
-		<div class="text-sky-800">
+		<div class="text-sky-50">
 			<slot />
 		</div>
 	</div>
