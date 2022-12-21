@@ -12,7 +12,11 @@ const [month, day, year] = [
 ];
 ---
 
-<MainLayout title={frontmatter.title} keywords={frontmatter.keywords} description={frontmatter.description}>
+<MainLayout
+	title={frontmatter.title}
+	keywords={frontmatter.keywords}
+	description={frontmatter.description}
+>
 	<Heading
 		title={frontmatter.title}
 		subtitle={`${month} ${day}, ${year}`}
@@ -22,8 +26,8 @@ const [month, day, year] = [
 		<slot />
 		<div class="pt-8">
 			If you have questions, concerns or just want to say hi 👋, hit me up on <a
-				href="https://twitter.com/neither1nor0">Twitter</a
-			> or <a href="https://mastodon.social/@neither1nor0">Mastodon</a>.
+				href="https://mastodon.social/@neither1nor0">Mastodon</a
+			>.
 		</div>
 	</article>
 </MainLayout>
