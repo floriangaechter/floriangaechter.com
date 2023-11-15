@@ -13,7 +13,9 @@ const { centered, description, title } = Astro.props
 		<title>{title} | Florian Gächter</title>
 		<meta property="og:title" content={`${title} | Florian Gächter`} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content="https://www.floriangaechter.com/home-about.png"
+		<meta property="og:image" content="https://www.floriangaechter.com/home-about.png" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
 		<script type="application/ld+json" set:html={JSON.stringify({
 			"@context": "https://schema.org/",
 			"@type": "Person",

@@ -19,7 +19,9 @@ const timeAgo = new TimeAgo("en-US")
 		<title>{frontmatter.title} | Florian Gächter</title>
 		<meta property="og:title" content={`${frontmatter.title} | Florian Gächter`} />
 		<meta property="og:description" content={frontmatter.description} />
-		<meta property="og:image" content={`https://www.floriangaechter.com/og-image/${slug}.png`}
+		<meta property="og:image" content={`https://www.floriangaechter.com/og-image/${slug}.png`} />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content={`https://www.floriangaechter.com/posts/${slug}`} />
 		<script type="application/ld+json" set:html={JSON.stringify({
 			"@context": "https://schema.org/",
 			"@type": "Person",
