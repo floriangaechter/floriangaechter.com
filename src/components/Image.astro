@@ -1,0 +1,10 @@
+---
+import { Image } from "astro:assets"
+
+const { alt, src } = Astro.props;
+---
+
+<div class="border border-base-100 dark:border-base-900 rounded-md bg-[#fff] flex items-center justify-center not-prose pt-[10%] overflow-hidden">
+	<Image class="mt-[-10%]" src={src} alt={alt} />
+</div>
+

@@ -10,6 +10,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.10.7"
+    "@astrojs/mdx": "^1.1.5",
+    "@astrojs/tailwind": "^5.0.2",
+    "@resvg/resvg-js": "^2.6.0",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^20.9.0",
+    "astro": "^3.5.4",
+    "javascript-time-ago": "^2.5.9",
+    "satori": "^0.10.9",
+    "satori-html": "^0.3.2",
+    "sharp": "^0.32.6",
+    "shiki-themes": "^0.2.7",
+    "tailwindcss": "^3.3.5"
   }
 }
