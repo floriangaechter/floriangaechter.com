@@ -5,6 +5,7 @@ import { loadTheme } from 'shiki-themes';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://www.floriangaechter.com',
 	integrations: [tailwind(), mdx()],
 	markdown: {
 		shikiConfig: { theme: loadTheme("./src/assets/flexoki-color-scheme.json") },
