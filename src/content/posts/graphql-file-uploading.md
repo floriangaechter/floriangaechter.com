@@ -121,7 +121,7 @@ formData.append("map", map)
 formData.append("0", event.target.files[0])
 ```
 
-_For the sake of this example I referenced the file directly from the form, assuming the upload is triggered by an event._
+_For the sake of this example, I referenced the file directly from the form, assuming the upload is triggered by an event._
 
 And lastly, send it to the server, using `fetch()`:
 
@@ -132,7 +132,7 @@ fetch("/graphql", {
 })
 ```
 
-If all goes well and your server is implemented according to the previously mentioned specification, you should be able to upload files with just plain old JavaScript. No need for a fancy library or framework. Which doesn't mean that those frameworks are bad by the way... I just feel sometimes it's not needed.
+If all goes well and your server is implemented according to the previously mentioned specification, you should be able to upload files with just plain old JavaScript. No need for a fancy library or framework. Which doesn't mean that those frameworks are bad, by the way... I just feel sometimes it's not needed.
 
 ## Multiple files
 
