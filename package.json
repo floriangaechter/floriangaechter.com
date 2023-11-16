@@ -16,7 +16,7 @@
     "@resvg/resvg-js": "^2.6.0",
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20.9.0",
-    "astro": "^3.5.4",
+    "astro": "^3.5.5",
     "javascript-time-ago": "^2.5.9",
     "satori": "^0.10.9",
     "satori-html": "^0.3.2",
