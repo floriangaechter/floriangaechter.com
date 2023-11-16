@@ -73,6 +73,8 @@ module.exports = {
 						'--tw-prose-links': theme('colors.base.black'),
 						'--tw-prose-bold': theme('colors.base.black'),
 						'--tw-prose-code': theme('colors.base.black'),
+						'--tw-prose-counters': theme('colors.base.black'),
+						'--tw-prose-bullets': theme('colors.base.black'),
 						'--tw-prose-pre-borders': theme('colors.base[100]'),
 						'--tw-prose-invert-body': theme('colors.base[200]'),
 						'--tw-prose-invert-headings': theme('colors.base[200]'),
@@ -81,6 +83,8 @@ module.exports = {
 						'--tw-prose-invert-bold': theme('colors.base[200]'),
 						'--tw-prose-invert-code': theme('colors.base[200]'),
 						'--tw-prose-invert-pre-borders': theme('colors.base[900]'),
+						'--tw-prose-invert-counters': theme('colors.base[200]'),
+						'--tw-prose-invert-bullets': theme('colors.base[200]'),
 					},
 				},
 				invert: {
