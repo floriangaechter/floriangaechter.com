@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 
 export async function GET(context: { site: string; }) {
 	const posts = await getCollection('posts');
-	console.log(posts);
 
 	return rss({
 		title: 'Florian Gächter’s Blog',
