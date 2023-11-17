@@ -1,11 +1,11 @@
 ---
-import DefaultLayout from '../layouts/Default.astro';
-import { getCollection } from 'astro:content';
+import PageLayout from "../layouts/Page.astro";
+import { getCollection } from "astro:content";
 
 const posts = await getCollection('posts');
 ---
 
-<DefaultLayout centered={false} title={`Home`} description={`Developer Advocate at Frontify sharing tips, tricks, and learnings about technology and software development. Based in Switzerland.`}>
+<PageLayout title={`Home`} description={`Developer Advocate at Frontify sharing tips, tricks, and learnings about technology and software development. Based in Switzerland.`}>
 	<header class="prose prose-flexoki dark:prose-invert prose-headings:text-xl prose-headings:font-normal prose-lead:text-base pb-16">
 		<h1>Hello, I'm Flo.</h1>
 		<p class="lead max-w-md">I'm a Developer Advocate at Frontify, based in Switzerland. On this blog, I'll be sharing my journey, tips and tricks, and everything I've learned about things I've come across.</p>
@@ -20,4 +20,5 @@ const posts = await getCollection('posts');
 			</li>
 		))}
 	</ul>
-</DefaultLayout>
+</PageLayout>
+

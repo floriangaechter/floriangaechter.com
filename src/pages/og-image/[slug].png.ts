@@ -18,7 +18,6 @@ const SFProDisplayBold = readFileSync(SFProDisplayBoldPath);
 const ogOptions: SatoriOptions = {
 	width: 1200,
 	height: 630,
-	// debug: true,
 	fonts: [
 		{
 			name: "SF Pro Display",

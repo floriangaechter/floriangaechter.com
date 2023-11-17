@@ -1,10 +1,11 @@
 ---
-import Navigation from "../components/Navigation.astro"
+import { ViewTransitions } from "astro:transitions";
+import Navigation from "@/components/Navigation";
 
-const { centered, description, title } = Astro.props
+const { description, title, type, ogImage } = Astro.props
 ---
 
-<html lang="en">
+<html lang="en" transition:animate="none">
 	<head>
 		<meta charset="utf-8">
 		<link rel="icon" href="/favicon.svg" />
@@ -13,8 +14,8 @@ const { centered, description, title } = Astro.props
 		<title>{title} | Florian Gächter</title>
 		<meta property="og:title" content={`${title} | Florian Gächter`} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content="https://www.floriangaechter.com/home-about.png" />
-		<meta property="og:type" content="website" />
+		<meta property="og:image" content={new URL(ogImage, Astro.url.origin)} />
+		<meta property="og:type" content={type} />
 		<meta property="og:url" content={Astro.url} />
 		<script type="application/ld+json" set:html={JSON.stringify({
 			"@context": "https://schema.org/",
@@ -42,13 +43,13 @@ const { centered, description, title } = Astro.props
 			}
 		})} />
 		<script defer data-domain="floriangaechter.com" src="https://plausible.gaechter.xyz/js/script.js"></script>
+		<ViewTransitions />
 	</head>
 	<body class="bg-base-paper dark:bg-base-black text-base-black dark:text-base-200">
 		<div class="container mx-auto px-4">
 			<Navigation />
-			<main class=`${centered ? "max-w-3xl mx-auto " : ""}my-12`>
-				<slot />
-			</main>
+			<slot />
 		</div>
 	</body>
 </html>
+
