@@ -2,14 +2,14 @@
 import { ViewTransitions } from "astro:transitions";
 import Navigation from "@/components/Navigation";
 
-const { description, title, type, ogImage } = Astro.props
+const { description, title, type, ogImage } = Astro.props;
 ---
 
 <html lang="en" transition:animate="none">
 	<head>
-		<meta charset="utf-8">
+		<meta charset="utf-8" />
 		<link rel="icon" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
 		<title>{title} | Florian Gächter</title>
 		<meta property="og:title" content={`${title} | Florian Gächter`} />
@@ -17,56 +17,62 @@ const { description, title, type, ogImage } = Astro.props
 		<meta property="og:image" content={new URL(ogImage, Astro.url.origin)} />
 		<meta property="og:type" content={type} />
 		<meta property="og:url" content={Astro.url} />
-		<script type="application/ld+json" set:html={JSON.stringify({
-			"@context": "https://schema.org/",
-			"@type": "Person",
-			"name": "Florian Gächter",
-			"url": "https://www.floriangaechter.com/",
-			"image": {
-				"@type": "ImageObject",
-				"url": "https://www.floriangaechter.com/floriangaechter.jpg",
-				"caption": "Florian Gächter",
-				"width": "600",
-				"height": "400"
-			},
-			"sameAs": [
-				"https://mastodon.social/@neither1nor0",
-				"https://www.linkedin.com/in/florian-g%C3%A4chter-39b013188/",
-				"https://github.com/floriangaechter"
-			],
-			"jobTitle": "Developer Advocate",
-			"worksFor": {
-				"@type": "Organization",
-				"name": "Frontify",
-				"url": "https://www.frontify.com/en/",
-				"sameAs": ["https://www.google.com/search?kgmid=/g/11g9mv8ly4"]
-			}
-		})} />
-		<script defer data-domain="floriangaechter.com" src="https://plausible.gaechter.xyz/js/script.js"></script>
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify({
+				"@context": "https://schema.org/",
+				"@type": "Person",
+				name: "Florian Gächter",
+				url: "https://www.floriangaechter.com/",
+				image: {
+					"@type": "ImageObject",
+					url: "https://www.floriangaechter.com/floriangaechter.jpg",
+					caption: "Florian Gächter",
+					width: "600",
+					height: "400",
+				},
+				sameAs: [
+					"https://mastodon.social/@neither1nor0",
+					"https://www.linkedin.com/in/florian-g%C3%A4chter-39b013188/",
+					"https://github.com/floriangaechter",
+				],
+				jobTitle: "Developer Advocate",
+				worksFor: {
+					"@type": "Organization",
+					name: "Frontify",
+					url: "https://www.frontify.com/en/",
+					sameAs: ["https://www.google.com/search?kgmid=/g/11g9mv8ly4"],
+				},
+			})}
+		/>
+		<script
+			defer
+			data-domain="floriangaechter.com"
+			src="https://plausible.gaechter.xyz/js/script.js"></script>
 		<ViewTransitions />
 	</head>
-	<body class="bg-base-paper dark:bg-base-black text-base-black dark:text-base-200">
+	<body
+		class="bg-base-paper dark:bg-base-black text-base-black dark:text-base-200"
+	>
 		<div class="container mx-auto px-4">
 			<Navigation />
 			<slot />
 		</div>
+		<style is:global>
+			@font-face {
+				font-family: InterVariable;
+				font-style: normal;
+				font-weight: 100 900;
+				font-display: swap;
+				src: url("/fonts/InterVariable.woff2") format("woff2");
+			}
+			@font-face {
+				font-family: InterVariable;
+				font-style: italic;
+				font-weight: 100 900;
+				font-display: swap;
+				src: url("/fonts/InterVariable-Italic.woff2") format("woff2");
+			}
+		</style>
 	</body>
 </html>
-
-<style is:global>
-	@font-face {
-		font-family: InterVariable;
-		font-style: normal;
-		font-weight: 100 900;
-		font-display: swap;
-		src: url("/fonts/InterVariable.woff2") format("woff2");
-	}
-	@font-face {
-		font-family: InterVariable;
-		font-style: italic;
-		font-weight: 100 900;
-		font-display: swap;
-		src: url("/fonts/InterVariable-Italic.woff2") format("woff2");
-	}
-</style>
-

@@ -10,13 +10,25 @@ const { slug } = Astro.params;
 const timeAgo = new TimeAgo("en-US");
 ---
 
-<DefaultLayout title={frontmatter.title} description={frontmatter.description} type="article" ogImage={`og-image/${slug}.png`}>
+<DefaultLayout
+	title={frontmatter.title}
+	description={frontmatter.description}
+	type="article"
+	ogImage={`og-image/${slug}.png`}
+>
 	<main class="my-12 prose prose-flexoki dark:prose-invert">
 		<div class="uppercase text-base-600 dark:text-base-500 text-sm mb-2">
 			Published {timeAgo.format(new Date(frontmatter.pubDate), "round-minute")}.
-			{frontmatter.modDate > frontmatter.pubDate && ` Updated ${timeAgo.format(new Date(frontmatter.modDate), "round-minute")}.`}
+
+
+			{
+				frontmatter.modDate > frontmatter.pubDate &&
+					` Updated ${timeAgo.format(
+						new Date(frontmatter.modDate),
+						"round-minute",
+					)}.`
+			}
 		</div>
 		<slot />
 	</main>
 </DefaultLayout>
-

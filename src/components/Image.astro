@@ -4,7 +4,8 @@ import { Image as AstroImage } from "astro:assets";
 const { alt, src } = Astro.props;
 ---
 
-<div class="border border-base-100 dark:border-base-900 rounded-md bg-[#fff] flex items-center justify-center not-prose pt-[10%] overflow-hidden">
+<div
+	class="border border-base-100 dark:border-base-900 rounded-md bg-[#fff] flex items-center justify-center not-prose pt-[10%] overflow-hidden"
+>
 	<AstroImage class="mt-[-10%]" src={src} alt={alt} />
 </div>
-

@@ -2,23 +2,40 @@
 import PageLayout from "../layouts/Page.astro";
 import { getCollection } from "astro:content";
 
-const posts = await getCollection('posts');
+const posts = await getCollection("posts");
 ---
 
-<PageLayout title={`Home`} description={`Developer Advocate at Frontify sharing tips, tricks, and learnings about technology and software development. Based in Switzerland.`}>
-	<header class="prose prose-flexoki dark:prose-invert prose-headings:text-xl prose-headings:font-medium prose-lead:text-base pb-16">
+<PageLayout
+	title={`Home`}
+	description={`Developer Advocate at Frontify sharing tips, tricks, and learnings about technology and software development. Based in Switzerland.`}
+>
+	<header
+		class="prose prose-flexoki dark:prose-invert prose-headings:text-xl prose-headings:font-medium prose-lead:text-base pb-16"
+	>
 		<h1>Hello, I'm Flo.</h1>
-		<p class="lead max-w-md">I'm a Developer Advocate at Frontify, based in Switzerland. On this blog, I'll be sharing my journey, tips and tricks, and everything I've learned about things I've come across.</p>
+		<p class="lead max-w-md">
+			I'm a Developer Advocate at Frontify, based in Switzerland. On this blog,
+			I'll be sharing my journey, tips and tricks, and everything I've learned
+			about things I've come across.
+		</p>
 	</header>
 	<ul class="divide-y divide-base-100 dark:divide-base-900 max-w-prose">
-		{posts.sort((a, b) => Number(b.data.pubDate) - Number(a.data.pubDate)).map(post => (
-			<li class="flex justify-between py-2">
-				<a href={`/posts/${post.slug}`} class="pr-4">{post.data.title}</a>
-				<time class="text-base-600 dark:text-base-500" datetime={post.data.pubDate.toISOString()}>
-					{post.data.pubDate.getFullYear()}
-				</time>
-			</li>
-		))}
+		{
+			posts
+				.sort((a, b) => Number(b.data.pubDate) - Number(a.data.pubDate))
+				.map((post) => (
+					<li class="flex justify-between py-2">
+						<a href={`/posts/${post.slug}`} class="pr-4">
+							{post.data.title}
+						</a>
+						<time
+							class="text-base-600 dark:text-base-500"
+							datetime={post.data.pubDate.toISOString()}
+						>
+							{post.data.pubDate.getFullYear()}
+						</time>
+					</li>
+				))
+		}
 	</ul>
 </PageLayout>
-

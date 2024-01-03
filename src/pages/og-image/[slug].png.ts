@@ -16,22 +16,22 @@ const SFProDisplayReg = readFileSync(SFProDisplayRegularPath);
 const SFProDisplayBold = readFileSync(SFProDisplayBoldPath);
 
 const ogOptions: SatoriOptions = {
-	width: 1200,
-	height: 630,
-	fonts: [
-		{
-			name: "SF Pro Display",
-			data: SFProDisplayReg,
-			weight: 400,
-			style: "normal",
-		},
-		{
-			name: "SF Pro Display",
-			data: SFProDisplayBold,
-			weight: 700,
-			style: "normal",
-		},
-	],
+  width: 1200,
+  height: 630,
+  fonts: [
+    {
+      name: "SF Pro Display",
+      data: SFProDisplayReg,
+      weight: 400,
+      style: "normal",
+    },
+    {
+      name: "SF Pro Display",
+      data: SFProDisplayBold,
+      weight: 700,
+      style: "normal",
+    },
+  ],
 };
 
 const markup = (title: string, pubDate: string) => html`<div
@@ -50,23 +50,23 @@ const markup = (title: string, pubDate: string) => html`<div
 </div>`;
 
 export async function GET({ params: { slug } }: APIContext) {
-	const post = await getEntryBySlug("posts", slug!);
-	const title = post?.data.title ?? "Florian Gächter";
-	const postDate = getFormattedDate(post?.data.pubDate ?? Date.now(), {
-		weekday: "long",
-		month: "long",
-	});
-	const svg = await satori(markup(title, postDate), ogOptions);
-	const png = new Resvg(svg).render().asPng();
+  const post = await getEntryBySlug("posts", slug!);
+  const title = post?.data.title ?? "Florian Gächter";
+  const postDate = getFormattedDate(post?.data.pubDate ?? Date.now(), {
+    weekday: "long",
+    month: "long",
+  });
+  const svg = await satori(markup(title, postDate), ogOptions);
+  const png = new Resvg(svg).render().asPng();
 
-	return new Response(png, {
-		headers: { "Content-Type": "image/png" },
-	});
+  return new Response(png, {
+    headers: { "Content-Type": "image/png" },
+  });
 }
 
 export const getStaticPaths = (async () => {
-	const posts = await getCollection("posts");
+  const posts = await getCollection("posts");
 
-	return posts.map(({ slug }) => ({ params: { slug } }));
+  return posts.map(({ slug }) => ({ params: { slug } }));
 }) satisfies GetStaticPaths;
 

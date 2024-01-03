@@ -4,9 +4,13 @@ import DefaultLayout from "./Default.astro";
 const { title, description } = Astro.props;
 ---
 
-<DefaultLayout title={title} description={description} type="website" ogImage="home-about.png">
-	<main class=`my-12`>
+<DefaultLayout
+	title={title}
+	description={description}
+	type="website"
+	ogImage="home-about.png"
+>
+	<main class="my-12">
 		<slot />
 	</main>
 </DefaultLayout>
-
