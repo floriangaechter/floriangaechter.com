@@ -4,10 +4,20 @@
     "baseUrl": ".",
     "verbatimModuleSyntax": true,
     "paths": {
-      "@/components/*": ["src/components/*.astro"],
-      "@/layouts/*": ["src/layouts/*.astro"],
-      "@/utils": ["src/utils/index.ts"]
-    }
+      "@/components/*": [
+        "src/components/*.astro"
+      ],
+      "@/layouts/*": [
+        "src/layouts/*.astro"
+      ],
+      "@/utils": [
+        "src/utils/index.ts"
+      ],
+    },
   },
-  "exclude": ["node_modules", ".vscode", "dist"]
+  "exclude": [
+    "node_modules",
+    ".vscode",
+    "dist"
+  ]
 }

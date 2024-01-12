@@ -1,16 +1,12 @@
 ---
-import DefaultLayout from "./Default.astro";
-import TimeAgo from "javascript-time-ago";
-import en from "javascript-time-ago/locale/en";
-
-TimeAgo.addDefaultLocale(en);
+import { format, formatDistance } from "date-fns";
+import BaseLayout from "./BaseLayout.astro";
 
 const { frontmatter } = Astro.props;
 const { slug } = Astro.params;
-const timeAgo = new TimeAgo("en-US");
 ---
 
-<DefaultLayout
+<BaseLayout
 	title={frontmatter.title}
 	description={frontmatter.description}
 	type="article"
@@ -18,17 +14,30 @@ const timeAgo = new TimeAgo("en-US");
 >
 	<main class="my-12 prose prose-flexoki dark:prose-invert">
 		<div class="uppercase text-base-600 dark:text-base-500 text-sm mb-2">
-			Published {timeAgo.format(new Date(frontmatter.pubDate), "round-minute")}.
-
-
+			<time
+				title={`Published on ${format(
+					new Date(frontmatter.pubDate),
+					"MM/dd/yyyy",
+				)}`}
+				datetime={new Date(frontmatter.pubDate).toString()}
+				>Published {formatDistance(new Date(), new Date(frontmatter.pubDate))}
+				ago</time
+			><br />
 			{
-				frontmatter.modDate > frontmatter.pubDate &&
-					` Updated ${timeAgo.format(
-						new Date(frontmatter.modDate),
-						"round-minute",
-					)}.`
+				frontmatter.modDate > frontmatter.pubDate && (
+					<time
+						title={`Updated on ${format(
+							new Date(frontmatter.modDate),
+							"MM/dd/yyyy",
+						)}`}
+						datetime={new Date(frontmatter.modDate).toString()}
+					>
+						Updated {formatDistance(new Date(), new Date(frontmatter.modDate))}{" "}
+						ago
+					</time>
+				)
 			}
 		</div>
 		<slot />
 	</main>
-</DefaultLayout>
+</BaseLayout>

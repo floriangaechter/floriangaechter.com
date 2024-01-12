@@ -1,10 +1,10 @@
 ---
-import DefaultLayout from "./Default.astro";
+import BaseLayout from "./BaseLayout.astro";
 
 const { title, description } = Astro.props;
 ---
 
-<DefaultLayout
+<BaseLayout
 	title={title}
 	description={description}
 	type="website"
@@ -13,4 +13,4 @@ const { title, description } = Astro.props;
 	<main class="my-12">
 		<slot />
 	</main>
-</DefaultLayout>
+</BaseLayout>
