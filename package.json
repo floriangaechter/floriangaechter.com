@@ -18,7 +18,7 @@
     "@types/markdown-it": "^13.0.7",
     "@types/node": "^20.11.17",
     "@types/sanitize-html": "^2.11.0",
-    "astro": "^4.3.5",
+    "astro": "^4.3.6",
     "date-fns": "^3.3.1",
     "markdown-it": "^14.0.0",
     "sanitize-html": "^2.11.0",
