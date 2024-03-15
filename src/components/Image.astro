@@ -1,11 +1,11 @@
 ---
 import { Image as AstroImage } from "astro:assets";
 
-const { alt, src } = Astro.props;
+const { alt, src, loading } = Astro.props;
 ---
 
 <div
 	class="border border-base-100 dark:border-base-900 rounded-md bg-[#fff] dark:bg-base-black flex items-center justify-center not-prose pt-[10%] overflow-hidden"
 >
-	<AstroImage class="mt-[-10%]" src={src} alt={alt} />
+	<AstroImage class="mt-[-10%]" src={src} alt={alt} loading={loading || 'lazy'} />
 </div>
