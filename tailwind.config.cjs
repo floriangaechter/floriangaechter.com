@@ -82,7 +82,7 @@ module.exports = {
 						'--tw-prose-pre-borders': theme('colors.base[100]'),
 						'--tw-prose-invert-body': theme('colors.base[200]'),
 						'--tw-prose-invert-headings': theme('colors.base[200]'),
-						'--tw-prose-invert-lead': theme('colors.base[600]'),
+						'--tw-prose-invert-lead': theme('colors.base[200]'),
 						'--tw-prose-invert-links': theme('colors.base[200]'),
 						'--tw-prose-invert-bold': theme('colors.base[200]'),
 						'--tw-prose-invert-code': theme('colors.base[200]'),

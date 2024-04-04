@@ -16,7 +16,7 @@ import secured from "../../assets/secured.png"
 
 You probably know the pain. You want to be smart and try to run all the different services locally in your home network to secure yourself against any possible attacks from the outside. But still, there is this one annoying thing:
 
-<Image src={unsecured} alt="Unsecured website" loading="eager" />
+<Image src={unsecured} alt="Screenshot of the address bar of an unsecured website" loading="eager" />
 
 While, in my opinion, it's not too much of a security issue (since the whole traffic is contained to your home network), it's still bothering me to always have to add an exception for every local site I visit.
 
@@ -36,7 +36,7 @@ There're [instructions](https://github.com/FiloSottile/mkcert#mobile-devices) on
 
 If you installed mkcert and ran it correctly for your Home Assistant installation, you should get two certificate files:
 
-<Image src={certificates} alt="Certificates" />
+<Image src={certificates} alt="Screenshot of the two generated certificates" />
 
 Copy those two files to your `/ssl` directory in your Home Assistant installation. Then, adapt your `configuration.yaml` file accordingly:
 
@@ -50,7 +50,7 @@ http:
 
 Now restart Home Assistant and depending on your browser, it should pick up the proper certificate from the server and you'll be greeted by a shining grey **locked** lock:
 
-<Image src={secured} alt="Secured website" />
+<Image src={secured} alt="Screenshot of the address bar of a secured website" />
 
 ## Conclusion
 

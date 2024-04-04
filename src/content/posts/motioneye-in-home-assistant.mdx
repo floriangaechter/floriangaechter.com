@@ -21,10 +21,10 @@ I'm going to assume you already have a [Home Assistant](https://www.home-assista
 The first thing we need to do is getting the URL we need for the integration. You'll find it in the "Video Stream" tab in the settings on your motionEye server. I'm using the _Fast Network Cam_ option, but you can use the normal mode as well. If you're using the normal mode, note down the Snapshot URL too, it can be used for the `still_image_url` property in the camera integration.
 
 **Fast Network Cam Mode**
-<Image src={video_streaming_fast_network_cam} alt="Video Streaming Tab / Fast Network Cam" />
+<Image src={video_streaming_fast_network_cam} alt="Screenshot showing Fast Network Cam mode" />
 
 **Normal Mode**
-<Image src={video_streaming} alt="Video Streaming Tab" />
+<Image src={video_streaming} alt="Screenshot showing normal mode" />
 
 
 ## Home Assistant
@@ -56,6 +56,6 @@ Once the camera and the stream are set up properly, we need to add the picture e
 
 That's it. Restart Home Assistant and you should see the camera stream:
 
-<Image src={lovelace} alt="Lovelace" />
+<Image src={lovelace} alt="Screenshot of the Lovelace dashboard showing the camera stream" />
 
 Sorry for the pinkish image; I'm running the [Pi NoIR Camera V2](https://www.raspberrypi.org/products/pi-noir-camera-v2/) without a filter.
