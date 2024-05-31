@@ -18,6 +18,7 @@ const { description, title, type, ogImage } = Astro.props;
 		<meta property="og:type" content={type} />
 		<meta property="og:url" content={Astro.url} />
 		<script
+			is:inline
 			type="application/ld+json"
 			set:html={JSON.stringify({
 				"@context": "https://schema.org/",
@@ -46,6 +47,7 @@ const { description, title, type, ogImage } = Astro.props;
 			})}
 		/>
 		<script
+			is:inline
 			defer
 			data-domain="floriangaechter.com"
 			src="https://plausible.gaechter.xyz/js/script.js"></script>
