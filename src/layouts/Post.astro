@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "./Base.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+
+type Props = CollectionEntry<"posts">["data"];
+
+const { title, description, pubDate, modDate } = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  type="article"
+  ogImage={`og-image/123.png`}
+>
+  <main class="my-12 prose prose-flexoki dark:prose-invert">
+    <div class="uppercase text-base-600 dark:text-base-500 text-sm mb-2">
+      <FormattedDate pubDate={pubDate} modDate={modDate} />
+    </div>
+    <slot />
+  </main>
+</BaseLayout>

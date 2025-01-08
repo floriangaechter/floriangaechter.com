@@ -1,0 +1,50 @@
+---
+import ThemeIcon from "./ThemeIcon.astro";
+---
+
+<nav class="flex py-4 mt-2">
+  <ul class="flex items-center">
+    <li class="-ml-2">
+      <a
+        class=`${Astro.url.pathname === "/" ? "bg-base-100 dark:bg-base-900 " : ""}p-1 ml-1 rounded hover:bg-base-150 dark:hover:bg-base-850`
+        href="/">Home</a
+      >
+    </li>
+    <li>
+      <a
+        class=`${Astro.url.pathname === "/about/" ? "bg-base-100 dark:bg-base-900 " : ""}p-1 ml-1 rounded hover:bg-base-150 dark:hover:bg-base-850`
+        href="/about/">About</a
+      >
+    </li>
+  </ul>
+  <ul class="flex items-center ml-auto">
+    <li>
+      <a
+        class="p-1 ml-1 rounded hover:bg-base-150 dark:hover:bg-base-850"
+        href="/rss.xml">RSS</a
+      >
+    </li>
+    <li>
+      <a
+        class="p-1 ml-1 rounded hover:bg-base-150 dark:hover:bg-base-850"
+        href="https://mastodon.social/@neither1nor0">Mastodon</a
+      >
+    </li>
+    <li>
+      <a
+        class="p-1 ml-1 rounded hover:bg-base-150 dark:hover:bg-base-850"
+        href="https://github.com/floriangaechter/">Github</a
+      >
+    </li>
+    <li>
+      <span
+        tabindex="0"
+        class="p-1 ml-1 rounded hover:bg-base-150 dark:hover:bg-base-850 cursor-pointer"
+        title="flo@<the domain name of this website>">@</span
+      >
+    </li>
+    <li>
+      <ThemeIcon />
+    </li>
+  </ul>
+</nav>

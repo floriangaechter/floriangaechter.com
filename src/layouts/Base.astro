@@ -1,0 +1,59 @@
+---
+import Navigation from "../components/Navigation.astro";
+import { ClientRouter } from "astro:transitions";
+
+const { description, title, type, ogImage } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title} | Florian Gächter</title>
+    <meta property="og:title" content={`${title} | Florian Gächter`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.url.origin)} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={Astro.url} />
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org/",
+        "@type": "Person",
+        name: "Florian Gächter",
+        url: "https://www.floriangaechter.com/",
+        image: {
+          "@type": "ImageObject",
+          url: "https://www.floriangaechter.com/floriangaechter.jpg",
+          caption: "Florian Gächter",
+          width: "600",
+          height: "400",
+        },
+        sameAs: [
+          "https://mastodon.social/@neither1nor0",
+          "https://www.linkedin.com/in/florian-g%C3%A4chter-39b013188/",
+          "https://github.com/floriangaechter",
+        ],
+        jobTitle: "Developer Advocate",
+        worksFor: {
+          "@type": "Organization",
+          name: "Frontify",
+          url: "https://www.frontify.com/en/",
+          sameAs: ["https://www.google.com/search?kgmid=/g/11g9mv8ly4"],
+        },
+      })}
+    />
+    <ClientRouter />
+  </head>
+  <body
+    class="bg-base-paper dark:bg-base-black text-base-black dark:text-base-200 selection:bg-base-black selection:text-base-paper dark:selection:bg-base-paper dark:selection:text-base-black"
+  >
+    <div class="container mx-auto px-4">
+      <Navigation />
+      <slot />
+    </div>
+  </body>
+</html>
