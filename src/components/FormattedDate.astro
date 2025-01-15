@@ -16,3 +16,17 @@ const { pubDate, modDate } = Astro.props;
     })
   }
 </time>
+{
+  modDate && (
+    <span class="text-base-300 dark:text-base-700">
+      / Updated:{" "}
+      <time datetime={modDate.toISOString()}>
+        {modDate.toLocaleDateString("en-us", {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        })}
+      </time>
+    </span>
+  )
+}

@@ -15,7 +15,7 @@ const { title, description, pubDate, modDate } = Astro.props;
   ogImage={`og-image/123.png`}
 >
   <main class="my-12 prose prose-flexoki dark:prose-invert">
-    <div class="uppercase text-base-600 dark:text-base-500 text-sm mb-2">
+    <div class="text-base-600 dark:text-base-500 text-sm mb-2">
       <FormattedDate pubDate={pubDate} modDate={modDate} />
     </div>
     <slot />

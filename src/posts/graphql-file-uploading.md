@@ -1,7 +1,7 @@
 ---
 title: GraphQL File Uploading (Without Apollo…)
-pubDate: "2020-02-10"
-modDate: "2021-01-06"
+pubDate: 2020-02-10
+modDate: 2021-01-06
 description: Learn how to upload files with GraphQL without libraries or frameworks like Apollo.
 keywords: ["graphql", "file upload", "fetch", "javascript"]
 ---
@@ -35,7 +35,7 @@ As the specs point out, the following GraphQL query should be sent to the server
 
 Which then will be uploaded as a multi-part form request:
 
-```
+```text
 --------------------------cec8e8123c05ba25
 Content-Disposition: form-data; name="operations"
 
@@ -59,7 +59,7 @@ Let's have a look at the different parts of the form request.
 
 1. `operations` contains the GraphQL query:
 
-   ```
+   ```text
    --------------------------cec8e8123c05ba25
    Content-Disposition: form-data; name="operations"
    { "query": "mutation ($file: Upload!) { singleUpload(file: $file) { id } }", "variables": { "file": null } }
@@ -67,7 +67,7 @@ Let's have a look at the different parts of the form request.
 
 2. `map` is responsible for the mapping between the file-variable in the GraphQL query and the file attached to the request:
 
-   ```
+   ```text
    --------------------------cec8e8123c05ba25
    Content-Disposition: form-data; name="map"
 
@@ -76,7 +76,7 @@ Let's have a look at the different parts of the form request.
 
 3. And the file fields contain the actual files themselves:
 
-   ```
+   ```text
    --------------------------cec8e8123c05ba25
    Content-Disposition: form-data; name="0"; filename="a.txt"
    Content-Type: text/plain

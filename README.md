@@ -3,9 +3,9 @@
 <!--toc:start-->
 
 - [Florian Gächter's blog](#florian-gächters-blog)
-  - [Creating new blog posts](#creating-new-blog-posts)
-  - [Optimizing images](#optimizing-images)
-  <!--toc:end-->
+- [Creating new blog posts](#creating-new-blog-posts)
+- [Optimizing images](#optimizing-images)
+<!--toc:end-->
 
 ## Creating new blog posts
 

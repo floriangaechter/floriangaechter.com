@@ -1,6 +1,6 @@
 ---
 title: New year, new update
-pubDate: "2025-01-01"
+pubDate: 2025-01-01
 description: It's time to redo a couple of things
 keywords: ["update", "reflection", "blog"]
 ---

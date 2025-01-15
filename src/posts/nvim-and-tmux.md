@@ -1,7 +1,6 @@
 ---
 title: An attempt to use Neovim and tmux
-pubDate: "2024-01-04"
-modDate: "2024-01-04"
+pubDate: 2024-01-04
 description: I'm going to try to use Neovim and tmux as my main development setup. Let's see how it goes.
 keywords: ["Neovim", "tmux"]
 ---

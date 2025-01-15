@@ -1,7 +1,6 @@
 ---
 title: A new keyboard – Meet the Totem
-pubDate: "2024-02-14"
-modDate: "2024-02-14"
+pubDate: 2024-02-14
 description: Meet the Totem, my new wireless split keyboard by GEIGEIGEIST
 keywords: ["Totem", "keyboard", "split keyboard", "ZMK"]
 ---
