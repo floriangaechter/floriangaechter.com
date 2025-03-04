@@ -1,10 +1,10 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import Navigation from "../components/Navigation.astro";
-import "../base.css";
-import addFigCaption from "../utils/addFigCaption.ts";
-const { compiledContent, description, title, type, ogImage } = Astro.props;
-const htmlContent = await compiledContent();
+// import "../base.css";
+import "../styles/global.css";
+
+const { description, title, type, ogImage } = Astro.props;
 ---
 
 <html lang="en">
@@ -55,7 +55,7 @@ const htmlContent = await compiledContent();
   >
     <div class="container mx-auto px-4">
       <Navigation />
-      <Fragment set:html={addFigCaption(htmlContent)} />
+      <slot />
     </div>
   </body>
 </html>
