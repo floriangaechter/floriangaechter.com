@@ -2,7 +2,7 @@ name: Deploy Astro site via SFTP
 
 on:
   push:
-    branches: [main]
+    branches: [new]
   workflow_dispatch:
 
 jobs:
