@@ -16,7 +16,7 @@ const posts = (await getCollection("posts")).sort(
     class="prose prose-flexoki dark:prose-invert prose-headings:text-xl prose-headings:font-medium prose-lead:text-base pb-16"
   >
     <h1>Hello, I'm Flo.</h1>
-    <p class="lead max-w-md">
+    <p class="max-w-md">
       I'm a Developer Advocate at Frontify, based in Switzerland. On this blog,
       I'll be sharing my journey, tips and tricks, and everything I've learned
       about things I've come across.
@@ -29,7 +29,9 @@ const posts = (await getCollection("posts")).sort(
           <a href={`/posts/${post.id}`} class="pr-4">
             {post.data.title}
           </a>
-          <FormattedDate pubDate={post.data.pubDate} />
+          <div class="text-right">
+            <FormattedDate pubDate={post.data.pubDate} />
+          </div>
         </li>
       ))
     }

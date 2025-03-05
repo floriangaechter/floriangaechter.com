@@ -56,6 +56,9 @@ const { description, title, type, ogImage } = Astro.props;
     <div class="container mx-auto px-4">
       <Navigation />
       <slot />
+      <div class="prose prose-sm text-base-600">
+        © {new Date().getFullYear()} Copyright Florian Gaechter. All rights reserved.
+      </div>
     </div>
   </body>
 </html>
