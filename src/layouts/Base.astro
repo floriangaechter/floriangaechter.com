@@ -56,7 +56,9 @@ const { description, title, type, ogImage } = Astro.props;
     <div class="container mx-auto px-4">
       <Navigation />
       <slot />
-      <div class="prose prose-sm max-w-none text-base-600 mb-6">
+      <div
+        class="prose prose-flexoki dark:prose-invert prose-sm opacity-50 max-w-none mb-6"
+      >
         © {new Date().getFullYear()} Copyright Florian Gächter. All rights reserved.
         This site is hosted on <a href="https://uberspace.de/">Uberspace</a>.
       </div>
