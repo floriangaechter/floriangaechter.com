@@ -3,9 +3,11 @@ import PageLayout from "../layouts/Page.astro";
 import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 
-const posts = (await getCollection("posts")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = (
+  await getCollection("posts", ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+  })
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <PageLayout
