@@ -13,5 +13,5 @@ That's super simple: just add a new `.md` file in the `./src/posts` directory.
 
 ## Optimizing images
 
-- Crop original image to 1200x679
-- Optimize image and remove EXIF data with `mogrify -format jpg -sampling-factor 4:2:0 -strip -quality 85 -interlace line -colorspace RGB FILENAME.jpg` (beware, this overwrites original image)
+- Crop or resize original image to 1200x679
+- Optimize image and remove EXIF data with `mogrify -format jpg -sampling-factor 4:2:0 -strip -quality 85 -interlace line -colorspace sRGB FILENAME.jpg` (beware, this overwrites original image)
