@@ -1,13 +1,12 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import Navigation from "../components/Navigation.astro";
-// import "../base.css";
 import "../styles/global.css";
 
 const { description, title, type, ogImage } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" transition:animate="none">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.svg" />
